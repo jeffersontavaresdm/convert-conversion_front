@@ -1,16 +1,17 @@
 import React from "react";
 import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
-import {Homepage} from "../pages/Homepage";
-import {FirstTestPage} from "../pages/FistTestPage";
-import {CurrencyTypesPage} from "../pages/CurrencyTypesPage";
+import {FistPage} from "../pages/FistTestPage";
+import {CurrencyConversionPage} from "../pages/CurrencyConversionPage";
+import Homepage from "../pages/Homepage";
 
 export const AppRounters = () => {
   return (
     <Router>
+      {/*<AppNavbar/>*/}
       <Routes>
+        <Route path="/test" element={<FistPage/>}/>
         <Route path="/" element={<Homepage/>}/>
-        <Route path="/test" element={<FirstTestPage/>}/>
-        <Route path="/types" element={<CurrencyTypesPage/>}/>
+        <Route path="/currency-conversion" element={<CurrencyConversionPage/>}/>
       </Routes>
     </Router>
   );

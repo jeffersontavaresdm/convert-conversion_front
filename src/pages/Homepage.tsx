@@ -1,16 +1,8 @@
-export const Homepage = () => {
-  document.title = "Homepage"
+import React from "react";
+import {Navigate} from "react-router-dom";
 
-  return (
-    <div>
-      <h1 style={{
-        color: "darkred",
-        textAlign: "center",
-        fontSize: "100px",
-        marginTop: "300px"
-      }}>
-        Homepage
-      </h1>
-    </div>
-  )
+const Homepage = () => {
+  return <Navigate to="/currency-conversion"/>;
 }
+
+export default Homepage

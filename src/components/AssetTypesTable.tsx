@@ -24,11 +24,15 @@ const AssetTypesTable = (props: AssetTypesTableProps) => {
         display: "inline-block",
         float: "right",
         marginRight: "5%",
+        marginTop: "100px",
         borderColor: "darkcyan"
       }}>
+      <h2 style={{marginLeft: "115px", color: "cyan"}}>
+        Types
+      </h2>
       <thead>
       <tr>
-        <th>#</th>
+        {/*<th>#</th>*/}
         <th>Currency Code</th>
         <th>Currency Name</th>
       </tr>
@@ -39,7 +43,7 @@ const AssetTypesTable = (props: AssetTypesTableProps) => {
           count = count + 1;
           return (
             <tr key={count}>
-              <td>{count}</td>
+              {/*<td>{count}</td>*/}
               <td>{asset.split("/")[0]}</td>
               <td>{asset.split("/")[1]}</td>
             </tr>
