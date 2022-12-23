@@ -5,7 +5,7 @@ interface ConvertResultTableProps {
   result: AssetCurrency
 }
 
-function ConvertResultTable(props: ConvertResultTableProps) {
+function ResultTable(props: ConvertResultTableProps) {
   const formatedDate = props
     .result
     .lastUpdate
@@ -52,4 +52,4 @@ function ConvertResultTable(props: ConvertResultTableProps) {
   );
 }
 
-export default ConvertResultTable;
+export default ResultTable;

@@ -5,7 +5,7 @@ import AssetTypesTable from "../components/AssetTypesTable";
 import AssetCurrencySpinner from "../components/AssetCurrencySpinner";
 import AssetCurrencyForm from "../components/AssetCurrencyForm";
 import AssetCurrency from "../dto/AssetCurrency";
-import ConvertResultTable from "../components/ConvertResultTable";
+import ResultTable from "../components/ResultTable";
 import Alert from "../components/Alert";
 
 export const CurrencyConversionPage = () => {
@@ -22,10 +22,6 @@ export const CurrencyConversionPage = () => {
       (async () => setTypes(await ApiService.getTypes()))()
     }
   }, [types])
-
-  React.useEffect(() => {
-    console.log(result)
-  }, [result])
 
   return (
     <div style={{color: "white"}}>
@@ -59,9 +55,9 @@ export const CurrencyConversionPage = () => {
         }}>
           {
             result ?
-              <div>
+              <div style={{marginTop: "80px"}}>
                 <span><strong>RESULT:</strong></span>
-                <ConvertResultTable result={result}/>
+                <ResultTable result={result}/>
               </div>
               : <></>
           }

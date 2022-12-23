@@ -1,6 +1,6 @@
 import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
-import React from "react";
+import React, {useState} from "react";
 
 interface AssetDropdownProps {
   types: string[]
@@ -8,6 +8,7 @@ interface AssetDropdownProps {
 }
 
 function AssetDropdown(props: AssetDropdownProps) {
+  const [title, setTitle] = useState<string>("Codes")
   let codes = props.types.map(asset => asset.split("/")[0]);
 
   const handleSelect = (event: any) => {
@@ -17,15 +18,22 @@ function AssetDropdown(props: AssetDropdownProps) {
   return (
     <DropdownButton
       id="dropdown-item-button"
-      title="Codes"
+      title={title}
       style={{display: "inline-block", marginLeft: "8px"}}
       onSelect={handleSelect}
     >
       {
-        codes.map(code =>
-          <Dropdown.Item as="button" eventKey={code} key={code} style={{textAlign: "center"}}>
+        codes.map(code => {
+          return <Dropdown.Item
+            as="button"
+            eventKey={code}
+            key={code}
+            style={{textAlign: "center"}}
+            onClick={() => setTitle(code)}
+          >
             {code}
-          </Dropdown.Item>)
+          </Dropdown.Item>
+        })
       }
     </DropdownButton>
   );
