@@ -1,17 +1,11 @@
 import Table from 'react-bootstrap/Table';
-import AssetTypes from "../dto/AssetTypes";
 
 interface AssetTypesTableProps {
-  types: AssetTypes;
+  types: string[];
 }
 
 const AssetTypesTable = (props: AssetTypesTableProps) => {
   let count = 0;
-
-  const distinctAssets = props
-    .types
-    .currencyTypes
-    .filter((asset, i, arr) => arr.findIndex(t => t.split("/")[0] === asset.split("/")[0]) === i)
 
   return (
     <Table
@@ -27,23 +21,20 @@ const AssetTypesTable = (props: AssetTypesTableProps) => {
         marginTop: "100px",
         borderColor: "darkcyan"
       }}>
-      <h2 style={{marginLeft: "115px", color: "cyan"}}>
-        Types
-      </h2>
       <thead>
       <tr>
-        {/*<th>#</th>*/}
+        <th>#</th>
         <th>Currency Code</th>
         <th>Currency Name</th>
       </tr>
       </thead>
       <tbody>
       {
-        distinctAssets.map(asset => {
+        props.types.map(asset => {
           count = count + 1;
           return (
             <tr key={count}>
-              {/*<td>{count}</td>*/}
+              <td>{count}</td>
               <td>{asset.split("/")[0]}</td>
               <td>{asset.split("/")[1]}</td>
             </tr>

@@ -12,11 +12,20 @@ export const CurrencyConversionPage = () => {
   const [types, setTypes] = useState<AssetTypes>()
   const [result, setResult] = useState<AssetCurrency>()
 
+  const distinctTypes = types ? types
+      .currencyTypes
+      .filter((asset, i, arr) => arr.findIndex(t => t.split("/")[0] === asset.split("/")[0]) === i)
+    : []
+
   React.useEffect(() => {
     if (!types) {
       (async () => setTypes(await ApiService.getTypes()))()
     }
   }, [types])
+
+  React.useEffect(() => {
+    console.log(result)
+  }, [result])
 
   return (
     <div style={{color: "white"}}>
@@ -39,8 +48,7 @@ export const CurrencyConversionPage = () => {
             </em>
           </strong>
         </p>
-        <AssetCurrencyForm setResult={setResult}/>
-        {/*{result ? <ConvertResultTable result={result}/> : <></>}*/}
+        <AssetCurrencyForm setResult={setResult} types={types ? distinctTypes : []}/>
         <div style={{
           marginLeft: "20px",
           marginTop: "20px",
@@ -49,12 +57,18 @@ export const CurrencyConversionPage = () => {
           alignItems: "center",
           flexDirection: "column"
         }}>
-          <span><strong>RESULT:</strong></span>
-          <ConvertResultTable result={result}/>
+          {
+            result ?
+              <div>
+                <span><strong>RESULT:</strong></span>
+                <ConvertResultTable result={result}/>
+              </div>
+              : <></>
+          }
           {result ? <></> : <Alert/>}
         </div>
       </div>
-      {types ? <AssetTypesTable types={types}/> : <AssetCurrencySpinner/>}
+      {types ? <AssetTypesTable types={distinctTypes}/> : <AssetCurrencySpinner/>}
     </div>
   );
 }

@@ -2,15 +2,32 @@ import Table from 'react-bootstrap/Table';
 import AssetCurrency from "../dto/AssetCurrency";
 
 interface ConvertResultTableProps {
-  result: AssetCurrency | undefined
+  result: AssetCurrency
 }
 
 function ConvertResultTable(props: ConvertResultTableProps) {
+  const formatedDate = props
+    .result
+    .lastUpdate
+    .replace("T", " ")
+    .replace("Z", " ")
+    .replaceAll("-", "/")
+
+  const fromName = props
+    .result
+    .from
+    .split("/")[1]
+
+  const toName = props
+    .result
+    .to
+    .split("/")[1]
+
   return (
     <Table striped bordered hover size="sm" style={{
       textAlign: "center",
       color: "white",
-      backgroundColor: "#14213d"                    ,
+      backgroundColor: "#14213d",
       marginTop: "10px"
     }}>
       <thead>
@@ -24,17 +41,11 @@ function ConvertResultTable(props: ConvertResultTableProps) {
       </thead>
       <tbody>
       <tr>
-        <td style={{color: "white"}}>USD/Dólar Americano</td>
-        <td style={{color: "white"}}>BRL/Real Brasileiro</td>
-        <td style={{color: "white"}}>5.17</td>
-        <td style={{color: "white"}}>5.17</td>
-        <td style={{color: "white"}}>2022-12-23 at 00:22:11</td>
-
-        {/*<td>{props.result.from}</td>*/}
-        {/*<td>{props.result.to}</td>*/}
-        {/*<td>{props.result.convertedValue}</td>*/}
-        {/*<td>{props.result.saleValue}</td>*/}
-        {/*<td>{props.result.lastUpdate}</td>*/}
+        <td>{fromName}</td>
+        <td>{toName}</td>
+        <td>{props.result.convertedValue}</td>
+        <td>{props.result.saleValue}</td>
+        <td>{formatedDate}</td>
       </tr>
       </tbody>
     </Table>
