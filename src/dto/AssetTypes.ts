@@ -1,3 +1,3 @@
-export interface AssetTypes {
+export default interface AssetTypes {
   currencyTypes: string[]
 }
