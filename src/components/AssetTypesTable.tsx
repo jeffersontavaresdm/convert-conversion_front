@@ -12,14 +12,8 @@ const AssetTypesTable = (props: AssetTypesTableProps) => {
       bordered
       hover
       variant="dark"
-      style={{
-        width: "400px",
-        display: "inline-block",
-        float: "right",
-        marginRight: "5%",
-        marginTop: "100px",
-        borderColor: "darkcyan"
-      }}>
+      style={{border: "2px solid darkcyan"}}
+    >
       <thead>
       <tr>
         <th>Currency Code</th>

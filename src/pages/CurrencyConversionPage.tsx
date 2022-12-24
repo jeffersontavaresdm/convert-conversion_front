@@ -102,7 +102,13 @@ export const CurrencyConversionPage = () => {
           }
         </div>
       </div>
-      {types && seeTypes ? <AssetTypesTable types={distinctTypes}/> : <></>}
+      {
+        types && seeTypes ?
+          <div style={{display: "inline-block", width: "350px", float: "right", marginRight: "5%", marginTop: "150px"}}>
+            <AssetTypesTable types={distinctTypes}/>
+          </div>
+          : <></>
+      }
     </div>
   )
     ;

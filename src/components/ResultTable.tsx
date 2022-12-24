@@ -23,10 +23,14 @@ function ResultTable(props: ConvertResultTableProps) {
     .split("/")[1]
 
   return (
-    <Table striped bordered hover size="sm" style={{
-      textAlign: "center",
-      marginTop: "10px",
-    }}>
+    <Table
+      striped
+      bordered
+      hover
+      variant={"dark"}
+      size="sm"
+      style={{border: "2px solid darkcyan"}}
+    >
       <thead>
       <tr>
         <th style={{padding: "16px"}}>From</th>

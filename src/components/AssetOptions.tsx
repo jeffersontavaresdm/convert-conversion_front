@@ -16,9 +16,6 @@ const AssetOptions = (props: AssetCurrencyFormProps) => {
   React.useEffect(() => {
     if (from && to) {
       (async () => props.resultHandle(await ApiService.convert(from, to)))()
-
-      setFrom("")
-      setTo("")
     }
   }, [from, to])
 
