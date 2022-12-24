@@ -1,6 +1,6 @@
 import Spinner from 'react-bootstrap/Spinner';
 
-const AssetCurrencySpinner = () => {
+const AppSpinner = () => {
   return (
     <Spinner animation="border" variant="primary" role="status" style={{marginLeft: "300px", marginBottom: "200px"}}>
       <span className="visually-hidden">Loading...</span>
@@ -8,4 +8,4 @@ const AssetCurrencySpinner = () => {
   );
 }
 
-export default AssetCurrencySpinner;
+export default AppSpinner;

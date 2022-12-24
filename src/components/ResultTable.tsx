@@ -6,12 +6,11 @@ interface ConvertResultTableProps {
 }
 
 function ResultTable(props: ConvertResultTableProps) {
-  const formatedDate = props
-    .result
-    .lastUpdate
-    .replace("T", " ")
-    .replace("Z", " ")
-    .replaceAll("-", "/")
+  const formatedDate = () => {
+    let date = props.result.lastUpdate.split("T")[0].replaceAll("-", "/")
+    let hours = props.result.lastUpdate.split("T")[1].replace("Z", "")
+    return (date).concat(" at ").concat(hours)
+  }
 
   const fromName = props
     .result
@@ -26,26 +25,24 @@ function ResultTable(props: ConvertResultTableProps) {
   return (
     <Table striped bordered hover size="sm" style={{
       textAlign: "center",
-      color: "white",
-      backgroundColor: "#14213d",
-      marginTop: "10px"
+      marginTop: "10px",
     }}>
       <thead>
       <tr>
-        <th>From</th>
-        <th>To</th>
-        <th>Converted Value</th>
-        <th>Sale Value</th>
-        <th>Last Update</th>
+        <th style={{padding: "16px"}}>From</th>
+        <th style={{padding: "16px"}}>To</th>
+        <th style={{padding: "16px"}}>Converted Value</th>
+        <th style={{padding: "16px"}}>Sale Value</th>
+        <th style={{padding: "16px"}}>Last Update</th>
       </tr>
       </thead>
       <tbody>
       <tr>
-        <td>{fromName}</td>
-        <td>{toName}</td>
-        <td>{props.result.convertedValue}</td>
-        <td>{props.result.saleValue}</td>
-        <td>{formatedDate}</td>
+        <td style={{padding: "16px"}}>{fromName}</td>
+        <td style={{padding: "16px"}}>{toName}</td>
+        <td style={{padding: "16px"}}>{props.result.convertedValue}</td>
+        <td style={{padding: "16px"}}>{props.result.saleValue}</td>
+        <td style={{padding: "16px"}}>{formatedDate()}</td>
       </tr>
       </tbody>
     </Table>

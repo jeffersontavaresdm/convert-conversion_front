@@ -1,13 +1,12 @@
-import Table from 'react-bootstrap/Table';
+import Table from "react-bootstrap/Table";
+import AppSpinner from "./AppSpinner";
 
 interface AssetTypesTableProps {
   types: string[];
 }
 
 const AssetTypesTable = (props: AssetTypesTableProps) => {
-  let count = 0;
-
-  return (
+  return props.types ?
     <Table
       striped
       bordered
@@ -23,7 +22,6 @@ const AssetTypesTable = (props: AssetTypesTableProps) => {
       }}>
       <thead>
       <tr>
-        <th>#</th>
         <th>Currency Code</th>
         <th>Currency Name</th>
       </tr>
@@ -31,10 +29,8 @@ const AssetTypesTable = (props: AssetTypesTableProps) => {
       <tbody>
       {
         props.types.map(asset => {
-          count = count + 1;
           return (
-            <tr key={count}>
-              <td>{count}</td>
+            <tr key={asset}>
               <td>{asset.split("/")[0]}</td>
               <td>{asset.split("/")[1]}</td>
             </tr>
@@ -43,7 +39,7 @@ const AssetTypesTable = (props: AssetTypesTableProps) => {
       }
       </tbody>
     </Table>
-  );
+    : <AppSpinner/>
 }
 
 export default AssetTypesTable;

@@ -2,19 +2,20 @@ import AssetCurrency from "../dto/AssetCurrency";
 import React, {useState} from "react";
 import AssetDropdown from "./AssetDropdown";
 import ApiService from "../service/AssetService";
+import {AxiosError, AxiosResponse} from "axios";
 
 interface AssetCurrencyFormProps {
-  setResult: (result: AssetCurrency) => void
+  resultHandle: (data: AxiosResponse<AssetCurrency, any> | AxiosError) => void
   types: string[]
 }
 
-const AssetCurrencyForm = (props: AssetCurrencyFormProps) => {
+const AssetOptions = (props: AssetCurrencyFormProps) => {
   let [from, setFrom] = useState<string>("")
   let [to, setTo] = useState<string>("")
 
   React.useEffect(() => {
-    if ((from && to) && from != to) {
-      (async () => props.setResult(await ApiService.convert(from, to)))()
+    if (from && to) {
+      (async () => props.resultHandle(await ApiService.convert(from, to)))()
 
       setFrom("")
       setTo("")
@@ -33,4 +34,4 @@ const AssetCurrencyForm = (props: AssetCurrencyFormProps) => {
   );
 }
 
-export default AssetCurrencyForm;
+export default AssetOptions;

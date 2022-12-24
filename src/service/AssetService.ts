@@ -11,8 +11,9 @@ class ApiService {
   }
 
   async convert(from: string, to: string) {
-    const data = await axios.get<AssetCurrency>(apiBaseUrl.concat(`/convert?from=${from}&to=${to}`));
-    return data.data;
+    return await axios
+      .get<AssetCurrency>(apiBaseUrl.concat(`/convert?from=${from}&to=${to}`))
+      .catch(error => {return error});
   }
 }
 
