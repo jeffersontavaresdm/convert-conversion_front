@@ -8,19 +8,9 @@ const AppNavbar = () => {
     <Navbar bg="dark" expand="lg">
       <Container>
         <Nav className="me-auto" style={{fontSize: "24px"}}>
-          <Nav.Link href="/" style={{color: "violet"}}>Home</Nav.Link>
-          <Nav.Link href="/all" style={{color: "violet"}}>All</Nav.Link>
-          {/*<NavDropdown title="Dropdown" id="basic-nav-dropdown" style={{fontSize: "20px",}}>*/}
-          {/*  <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>*/}
-          {/*  <NavDropdown.Item href="#action/3.2">*/}
-          {/*    Another action*/}
-          {/*  </NavDropdown.Item>*/}
-          {/*  <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>*/}
-          {/*  <NavDropdown.Divider/>*/}
-          {/*  <NavDropdown.Item href="#action/3.4">*/}
-          {/*    Separated link*/}
-          {/*  </NavDropdown.Item>*/}
-          {/*</NavDropdown>*/}
+          <Nav.Link href="/test" style={{color: "gold"}}>Test</Nav.Link>
+          <Nav.Link href="/" style={{color: "gold"}}>Home</Nav.Link>
+          <Nav.Link href="/all" style={{color: "gold"}}>All</Nav.Link>
         </Nav>
       </Container>
     </Navbar>

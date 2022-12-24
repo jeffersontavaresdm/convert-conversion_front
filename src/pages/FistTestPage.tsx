@@ -5,12 +5,12 @@ export const FistPage = () => {
     <button
       style={{
         backgroundColor: "black",
-        width: "20%",
-        height: "20%",
+        width: "35%",
+        height: "65%",
         border: "3px solid cyan",
-        borderRadius: "100px",
+        borderRadius: "100%",
         textAlign: "center",
-        padding: "16px",
+        padding: "36px",
         position: "absolute",
         top: "50%",
         left: "50%",
@@ -18,7 +18,7 @@ export const FistPage = () => {
       }}
       onClick={() => window.location.href = "/"}
     >
-      <h1 style={{color: "goldenrod"}}>TEST!</h1>
+      <h1 style={{color: "goldenrod"}}>Click to go to first useful page</h1>
     </button>
   )
 }

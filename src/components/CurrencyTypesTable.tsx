@@ -1,12 +1,11 @@
 import Table from "react-bootstrap/Table";
-import AppSpinner from "./AppSpinner";
 
 interface CurrencyTypesTableProps {
   types: string[];
 }
 
 const CurrencyTypesTable = (props: CurrencyTypesTableProps) => {
-  return props.types ?
+  return (
     <Table
       striped
       bordered
@@ -33,7 +32,7 @@ const CurrencyTypesTable = (props: CurrencyTypesTableProps) => {
       }
       </tbody>
     </Table>
-    : <AppSpinner/>
+  );
 }
 
 export default CurrencyTypesTable;

@@ -84,14 +84,9 @@ export const CurrencyConversionPage = () => {
           {
             result ?
               <div style={{marginTop: "80px"}}>
-                <span><strong>RESULT:</strong></span>
+                <strong>RESULT:</strong>
                 <ResultTable result={result}/>
               </div>
-              : <></>
-          }
-          {
-            result
-              ? <></>
               : <div style={{width: "1300px", marginTop: "80px"}}>
                 {
                   responseError
@@ -99,7 +94,7 @@ export const CurrencyConversionPage = () => {
                       variant={"danger"}
                       message={"An error occurred, maybe there is no conversion between these currencies yet."}
                     />
-                    : <AppAlert variant={"warning"} message={"No codes selected yet."}/>
+                    : <AppAlert variant={"info"} message={"No codes selected yet."}/>
                 }
               </div>
           }
