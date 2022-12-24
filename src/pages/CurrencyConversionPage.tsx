@@ -1,16 +1,16 @@
 import React, {useState} from "react";
 import ApiService from "../service/AssetService";
-import AssetTypes from "../dto/AssetTypes";
+import CurrencyTypes from "../dto/CurrencyTypes";
 import AssetCurrency from "../dto/AssetCurrency";
 import ResultTable from "../components/ResultTable";
 import AppAlert from "../components/AppAlert";
-import AssetOptions from "../components/AssetOptions";
+import CurrencyOptions from "../components/CurrencyOptions";
 import {AxiosError, AxiosResponse} from "axios";
-import AssetTypesTable from "../components/AssetTypesTable";
+import CurrencyTypesTable from "../components/CurrencyTypesTable";
 import Button from 'react-bootstrap/Button';
 
 export const CurrencyConversionPage = () => {
-  const [types, setTypes] = useState<AssetTypes>()
+  const [types, setTypes] = useState<CurrencyTypes>()
   const [result, setResult] = useState<AssetCurrency>()
   const [responseError, setResponseError] = useState<boolean>(false)
   const [seeTypes, setSeeTypes] = useState<boolean>(false)
@@ -61,7 +61,7 @@ export const CurrencyConversionPage = () => {
           </strong>
         </p>
         <div style={{marginTop: "80px", textAlign: "center"}}>
-          <AssetOptions resultHandle={resultHandle} types={distinctTypes}/>
+          <CurrencyOptions resultHandle={resultHandle} types={distinctTypes}/>
         </div>
         <div style={{marginTop: "80px"}}>
           <span>Click on the button to see the types of coins:</span>
@@ -108,7 +108,7 @@ export const CurrencyConversionPage = () => {
       {
         types && seeTypes ?
           <div style={{display: "inline-block", width: "350px", float: "right", marginRight: "5%", marginTop: "150px"}}>
-            <AssetTypesTable types={distinctTypes}/>
+            <CurrencyTypesTable types={distinctTypes}/>
           </div>
           : <></>
       }

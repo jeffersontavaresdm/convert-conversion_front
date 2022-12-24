@@ -1,11 +1,11 @@
 import Table from "react-bootstrap/Table";
 import AppSpinner from "./AppSpinner";
 
-interface AssetTypesTableProps {
+interface CurrencyTypesTableProps {
   types: string[];
 }
 
-const AssetTypesTable = (props: AssetTypesTableProps) => {
+const CurrencyTypesTable = (props: CurrencyTypesTableProps) => {
   return props.types ?
     <Table
       striped
@@ -36,4 +36,4 @@ const AssetTypesTable = (props: AssetTypesTableProps) => {
     : <AppSpinner/>
 }
 
-export default AssetTypesTable;
+export default CurrencyTypesTable;

@@ -7,7 +7,7 @@ interface AssetDropdownProps {
   setCode: (code: string) => void
 }
 
-function AssetDropdown(props: AssetDropdownProps) {
+function CurrencyDropdown(props: AssetDropdownProps) {
   const [title, setTitle] = useState<string>("Codes")
   let codes = props.types.map(asset => asset.split("/")[0]);
 
@@ -19,7 +19,6 @@ function AssetDropdown(props: AssetDropdownProps) {
     <DropdownButton
       id="dropdown-item-button"
       title={title}
-      style={{display: "inline-block", marginLeft: "8px"}}
       onSelect={handleSelect}
     >
       {
@@ -39,4 +38,4 @@ function AssetDropdown(props: AssetDropdownProps) {
   );
 }
 
-export default AssetDropdown;
+export default CurrencyDropdown;

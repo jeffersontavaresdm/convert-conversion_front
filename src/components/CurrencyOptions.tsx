@@ -1,6 +1,6 @@
 import AssetCurrency from "../dto/AssetCurrency";
 import React, {useState} from "react";
-import AssetDropdown from "./AssetDropdown";
+import CurrencyDropdown from "./CurrencyDropdown";
 import ApiService from "../service/AssetService";
 import {AxiosError, AxiosResponse} from "axios";
 
@@ -9,7 +9,7 @@ interface AssetCurrencyFormProps {
   types: string[]
 }
 
-const AssetOptions = (props: AssetCurrencyFormProps) => {
+const CurrencyOptions = (props: AssetCurrencyFormProps) => {
   let [from, setFrom] = useState<string>("")
   let [to, setTo] = useState<string>("")
 
@@ -21,14 +21,16 @@ const AssetOptions = (props: AssetCurrencyFormProps) => {
 
   return (
     <div>
-      <span>
-        From:<AssetDropdown types={props.types} setCode={setFrom}/>
-      </span>
-      <span style={{marginLeft: "24px"}}>
-        To:<AssetDropdown types={props.types} setCode={setTo}/>
-      </span>
+      <span>From:</span>
+      <div style={{display: "inline-block", marginLeft: "8px"}}>
+        <CurrencyDropdown types={props.types} setCode={setFrom}/>
+      </div>
+      <span style={{marginLeft: "24px"}}>To:</span>
+      <div style={{display: "inline-block", marginLeft: "8px"}}>
+        <CurrencyDropdown types={props.types} setCode={setTo}/>
+      </div>
     </div>
   );
 }
 
-export default AssetOptions;
+export default CurrencyOptions;
