@@ -20,7 +20,7 @@ const AssetOptions = (props: AssetCurrencyFormProps) => {
   }, [from, to])
 
   return (
-    <div style={{marginTop: "20px", textAlign: "center"}}>
+    <div>
       <span>
         From:<AssetDropdown types={props.types} setCode={setFrom}/>
       </span>

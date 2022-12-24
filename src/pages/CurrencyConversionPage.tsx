@@ -59,7 +59,9 @@ export const CurrencyConversionPage = () => {
             </em>
           </strong>
         </p>
-        <AssetOptions resultHandle={resultHandle} types={distinctTypes}/>
+        <div style={{marginTop: "80px", textAlign: "center"}}>
+          <AssetOptions resultHandle={resultHandle} types={distinctTypes}/>
+        </div>
         <div style={{marginTop: "80px"}}>
           <span>Click on the button to see the types of coins:</span>
           <Button
