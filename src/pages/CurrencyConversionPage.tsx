@@ -19,6 +19,7 @@ export const CurrencyConversionPage = () => {
     ? types
       .currencyTypes
       .filter((asset, i, arr) => arr.findIndex(t => t.split("/")[0] === asset.split("/")[0]) === i)
+      .sort()
     : []
 
   const resultHandle = (data: AxiosResponse<AssetCurrency, any> | AxiosError) => {
