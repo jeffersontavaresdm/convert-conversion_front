@@ -11,12 +11,12 @@ const CurrencyTypesTable = (props: CurrencyTypesTableProps) => {
       bordered
       hover
       variant="dark"
-      style={{border: "2px solid darkcyan"}}
+      style={{border: "2px solid darkcyan", textAlign: "center"}}
     >
       <thead>
       <tr>
-        <th>Currency Code</th>
-        <th>Currency Name</th>
+        <th>Codigo</th>
+        <th>Nome</th>
       </tr>
       </thead>
       <tbody>

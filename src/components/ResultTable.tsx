@@ -7,9 +7,9 @@ interface ConvertResultTableProps {
 
 function ResultTable(props: ConvertResultTableProps) {
   const formatedDate = () => {
-    let date = props.result.lastUpdate.split("T")[0].replaceAll("-", "/")
+    let date = props.result.lastUpdate.split("T")[0].replaceAll("-", "/").split('/').reverse().join('/')
     let hours = props.result.lastUpdate.split("T")[1].replace("Z", "")
-    return (date).concat(" at ").concat(hours)
+    return (date).concat(" as ").concat(hours)
   }
 
   const fromName = props
@@ -33,11 +33,11 @@ function ResultTable(props: ConvertResultTableProps) {
     >
       <thead>
       <tr>
-        <th style={{padding: "16px"}}>From</th>
-        <th style={{padding: "16px"}}>To</th>
-        <th style={{padding: "16px"}}>Converted Value</th>
-        <th style={{padding: "16px"}}>Sale Value</th>
-        <th style={{padding: "16px"}}>Last Update</th>
+        <th style={{padding: "16px"}}>De</th>
+        <th style={{padding: "16px"}}>Para</th>
+        <th style={{padding: "16px"}}>Valor Convertido</th>
+        <th style={{padding: "16px"}}>Valor de venda</th>
+        <th style={{padding: "16px"}}>Ultima atualização</th>
       </tr>
       </thead>
       <tbody>

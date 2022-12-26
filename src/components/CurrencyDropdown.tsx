@@ -8,7 +8,7 @@ interface AssetDropdownProps {
 }
 
 function CurrencyDropdown(props: AssetDropdownProps) {
-  const [title, setTitle] = useState<string>("Codes")
+  const [title, setTitle] = useState<string>("Codigo")
   let codes = props.types.map(asset => asset.split("/")[0]);
 
   const handleSelect = (event: any) => {
@@ -20,6 +20,7 @@ function CurrencyDropdown(props: AssetDropdownProps) {
       id="dropdown-item-button"
       title={title}
       onSelect={handleSelect}
+      style={{border: "1px solid cyan", borderRadius: "6px"}}
     >
       {
         codes.map(code => {

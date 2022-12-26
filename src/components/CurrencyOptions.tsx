@@ -21,11 +21,11 @@ const CurrencyOptions = (props: AssetCurrencyFormProps) => {
 
   return (
     <div>
-      <span>From:</span>
+      <span>De:</span>
       <div style={{display: "inline-block", marginLeft: "8px"}}>
         <CurrencyDropdown types={props.types} setCode={setFrom}/>
       </div>
-      <span style={{marginLeft: "24px"}}>To:</span>
+      <span style={{marginLeft: "24px"}}>Para:</span>
       <div style={{display: "inline-block", marginLeft: "8px"}}>
         <CurrencyDropdown types={props.types} setCode={setTo}/>
       </div>
