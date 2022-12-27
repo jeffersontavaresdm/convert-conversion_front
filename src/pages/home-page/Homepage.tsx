@@ -1,5 +1,5 @@
 import React from "react";
-import ArcadeButton from "../components/ArcadeButton";
+import ArcadeButton from "../../components/ArcadeButton";
 
 const Homepage = () => {
   document.title = "Homepage"

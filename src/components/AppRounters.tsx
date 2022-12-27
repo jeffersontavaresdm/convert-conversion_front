@@ -1,9 +1,9 @@
 import React from "react";
 import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
-import {ConverterPage} from "../pages/ConverterPage";
-import Homepage from "../pages/Homepage";
+import {ConverterPage} from "../pages/converter-page/ConverterPage";
+import Homepage from "../pages/home-page/Homepage";
 import AppNavbar from "./AppNavbar";
-import BRLResultsPage from "../pages/BRLResultsPage";
+import ConversionsToBRLPage from "../pages/all-result-page/ConversionsToBRLPage";
 import MePage from "../pages/me-page/MePage";
 
 export const AppRounters = () => {
@@ -15,7 +15,7 @@ export const AppRounters = () => {
         <Route path="/personal-page" element={<MePage/>}/>
         <Route path="/currency-conversion" element={<ConverterPage/>}/>
         <Route path="/contacts" element={<MePage/>}/>
-        <Route path="/all" element={<BRLResultsPage/>}/>
+        <Route path="/all" element={<ConversionsToBRLPage/>}/>
       </Routes>
     </Router>
   );

@@ -1,5 +1,7 @@
 const ContactsPage = () => {
-  return (<h1>TESTE 3</h1>);
+  document.title = "Contacts"
+
+  return (<h1>Contacts Page</h1>);
 }
 
 export default ContactsPage;

@@ -29,7 +29,7 @@ function ResultTable(props: ConvertResultTableProps) {
       hover
       variant={"dark"}
       size="sm"
-      style={{border: "2px solid darkcyan"}}
+      style={{border: "2px solid darkcyan", width: "100%"}}
     >
       <thead>
       <tr>

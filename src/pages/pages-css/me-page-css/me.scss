@@ -5,10 +5,14 @@
     background-color: #BDB76B;
   }
 
+  #header-img_name {
+    cursor: pointer;
+  }
+
   #icon-img {
-    width: 50px;
+    width: 55px;
     position: absolute;
-    top: 77px;
+    top: 75px;
     left: 150px;
   }
 
@@ -18,8 +22,8 @@
     font-size: 24px;
     font-weight: bold;
     position: absolute;
-    top: 84px;
-    left: 215px;
+    top: 87px;
+    left: 213px;
   }
 
   #header-about {

@@ -13,7 +13,7 @@ const AppNavbar = () => {
           style={{fontSize: "24px", fontWeight: "bold"}}>
           <Nav.Link className={"navlink"} href="/">Home</Nav.Link>
           <Nav.Link className={"navlink"} href="/contacts">Me</Nav.Link>
-          <Nav.Link className={"navlink"} href="/all">Conversions to BRL</Nav.Link>
+          <Nav.Link className={"navlink"} href="/all">BRL's</Nav.Link>
           <Nav.Link className={"navlink"} id="navbar-back" href="/back" hidden={true}>Back</Nav.Link>
         </Nav>
       </Container>

@@ -1,14 +1,14 @@
 import React, {useState} from "react";
-import ApiService from "../service/AssetService";
-import CurrencyTypes from "../dto/CurrencyTypes";
-import AssetCurrency from "../dto/AssetCurrency";
-import ResultTable from "../components/ResultTable";
-import AppAlert from "../components/AppAlert";
-import CurrencyOptions from "../components/CurrencyOptions";
+import ApiService from "../../service/AssetService";
+import CurrencyTypes from "../../dto/CurrencyTypes";
+import AssetCurrency from "../../dto/AssetCurrency";
+import ResultTable from "../../components/ResultTable";
+import AppAlert from "../../components/AppAlert";
+import CurrencyOptions from "../../components/CurrencyOptions";
 import {AxiosError, AxiosResponse} from "axios";
-import CurrencyTypesTable from "../components/CurrencyTypesTable";
-import ViewTypesButton from "../components/ViewTypesButton";
-import AppSpinner from "../components/AppSpinner";
+import CurrencyTypesTable from "../../components/CurrencyTypesTable";
+import ViewTypesButton from "../../components/ViewTypesButton";
+import AppSpinner from "../../components/AppSpinner";
 
 export const ConverterPage = () => {
   document.title = "Converter";
@@ -103,7 +103,7 @@ export const ConverterPage = () => {
           }}>
             {
               result ?
-                <div style={{marginTop: "80px"}}>
+                <div style={{marginTop: "80px", width: "100%"}}>
                   <span><strong>Resultado:</strong></span>
                   <ResultTable result={result}/>
                 </div>

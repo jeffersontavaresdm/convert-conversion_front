@@ -4,9 +4,6 @@ import SkillPage from "./SkillPage";
 import ContactsPage from "./ContactsPage";
 
 const MePage = () => {
-  document.title = "Contatos"
-
-  // const [select, setSelect] = useState<string>("none")
   const [about, setAbout] = useState<boolean>(true)
   const [skills, setSkills] = useState<boolean>(false)
   const [contacts, setContacts] = useState<boolean>(false)
@@ -52,8 +49,10 @@ const MePage = () => {
   return (
     <div id={"main-div"}>
       <div id={"header-div"}>
-        <img id={"icon-img"} src="svg/radar.svg" alt={"img01"}/>
-        <span id={"header-name"}>Jefferson Tavares</span>
+        <div id={"header-img_name"} onClick={() => window.location.href = "/"}>
+          <img id={"icon-img"} src="svg/radar.svg" alt={"img01"}/>
+          <span id={"header-name"}>Jefferson Tavares</span>
+        </div>
         <span className={"header-element"} id={"header-about"} onClick={() => setAbout(true)}>
           About
         </span>

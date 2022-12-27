@@ -1,5 +1,7 @@
 const SkillPage = () => {
-  return (<h1>TESTE 2</h1>);
+  document.title = "Skills"
+
+  return (<h1>Skills Page</h1>);
 }
 
 export default SkillPage;

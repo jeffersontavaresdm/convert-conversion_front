@@ -13,7 +13,14 @@ class ApiService {
   async convert(from: string, to: string) {
     return await axios
       .get<AssetCurrency>(apiBaseUrl.concat(`/convert?from=${from}&to=${to}`))
-      .catch(error => {return error});
+      .catch(error => {
+        return error
+      });
+  }
+
+  async getAll() {
+    let data = await axios.get<AssetCurrency[]>(apiBaseUrl.concat("/all"));
+    return data.data;
   }
 }
 
