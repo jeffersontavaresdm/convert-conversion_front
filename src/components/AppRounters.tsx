@@ -1,10 +1,10 @@
 import React from "react";
 import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
-import {CurrencyConversionPage} from "../pages/CurrencyConversionPage";
+import {ConverterPage} from "../pages/ConverterPage";
 import Homepage from "../pages/Homepage";
 import AppNavbar from "./AppNavbar";
-import ViewAllResultsPage from "../pages/ViewAllResultsPage";
-import MePage from "../pages/MePage";
+import BRLResultsPage from "../pages/BRLResultsPage";
+import MePage from "../pages/me-page/MePage";
 
 export const AppRounters = () => {
   return (
@@ -13,9 +13,9 @@ export const AppRounters = () => {
       <Routes>
         <Route path="/" element={<Homepage/>}/>
         <Route path="/personal-page" element={<MePage/>}/>
-        <Route path="/currency-conversion" element={<CurrencyConversionPage/>}/>
+        <Route path="/currency-conversion" element={<ConverterPage/>}/>
         <Route path="/contacts" element={<MePage/>}/>
-        <Route path="/all" element={<ViewAllResultsPage/>}/>
+        <Route path="/all" element={<BRLResultsPage/>}/>
       </Routes>
     </Router>
   );

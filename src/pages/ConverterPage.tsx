@@ -10,7 +10,9 @@ import CurrencyTypesTable from "../components/CurrencyTypesTable";
 import ViewTypesButton from "../components/ViewTypesButton";
 import AppSpinner from "../components/AppSpinner";
 
-export const CurrencyConversionPage = () => {
+export const ConverterPage = () => {
+  document.title = "Converter";
+
   const [types, setTypes] = useState<CurrencyTypes>()
   const [result, setResult] = useState<AssetCurrency>()
   const [responseError, setResponseError] = useState<boolean>(false)
