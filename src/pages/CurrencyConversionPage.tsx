@@ -49,8 +49,7 @@ export const CurrencyConversionPage = () => {
   return (
     !types
       ? <div style={{position: "absolute", left: "50%", top: "50%", translate: "-50% -50%"}}><AppSpinner/></div>
-      :
-      <div style={{width: "100%", display: "flex", flexDirection: "row", justifyContent: "center"}}>
+      : <div style={{width: "100%", display: "flex", flexDirection: "row", justifyContent: "center"}}>
         <div style={{
           display: "inline-block",
           color: "white",
