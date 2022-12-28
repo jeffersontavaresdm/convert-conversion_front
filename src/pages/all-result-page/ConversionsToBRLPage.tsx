@@ -10,7 +10,7 @@ import ResponseResult from "../../dto/ResponseResult";
 const ConversionsToBRLPage = () => {
   document.title = "Conversion to BRL";
 
-  const PAGE_LIMIT = 5;
+  const PAGE_LIMIT = 10;
 
   const [buttonClicked, setButtonClicked] = useState<boolean>(false)
   const [result, setResult] = useState<ResponseResult>({assets: [], entityCount: 0})
@@ -73,8 +73,11 @@ const ConversionsToBRLPage = () => {
     result && result.entityCount == 0
       ? <div style={{position: "absolute", left: "50%", top: "50%", translate: "-50% -50%"}}><AppSpinner/></div>
       : <div>
-        <div style={{padding: "36px", textAlign: "center"}}>
+        <div style={{marginLeft: "570px"}}>
           <h1 style={{
+            // backgroundColor: "black",
+            paddingTop: "100px",
+            marginBottom: "100px",
             fontWeight: "bold",
             fontSize: "60px",
             color: "coral",
@@ -84,7 +87,7 @@ const ConversionsToBRLPage = () => {
           >
             Conversor de Moedas
           </h1>
-          <h2 style={{marginTop: "36px", color: "white", fontStyle: "italic"}}>
+          <h2 style={{marginTop: "50px", color: "white", fontStyle: "italic"}}>
             Aqui, podemos ver todos os tipos de moeda convertido pelos usuários até o momento!
           </h2>
         </div>
@@ -92,7 +95,7 @@ const ConversionsToBRLPage = () => {
           // backgroundColor: "darkred",
           width: "100%",
           height: "100%",
-          marginTop: "80px",
+          marginTop: "50px",
           display: "flex",
           flexDirection: "row"
         }}>
@@ -152,7 +155,7 @@ const ConversionsToBRLPage = () => {
                 result && result.entityCount >= 1
                   ? assetsHandler(result.assets).map((asset, index) => {
                     return <tr key={index}>
-                      <td style={{padding: "16px"}}>{index + 1}</td>
+                      <td style={{padding: "16px"}}>{(page - 1) * 10 + (index + 1)}</td>
                       <td style={{padding: "16px"}}>{fromName(asset)}</td>
                       <td style={{padding: "16px"}}>{toName(asset)}</td>
                       <td style={{padding: "16px"}}>{asset.convertedValue}</td>
