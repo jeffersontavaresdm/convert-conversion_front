@@ -5,6 +5,7 @@ import {ToggleButtonGroup} from "react-bootstrap";
 interface ArcaneButtonProps {
   handleSetSeeTypes: Dispatch<SetStateAction<boolean>>
   seeTypes: boolean
+  buttonName: string
 }
 
 const ViewTypesButton = (props: ArcaneButtonProps) => {
@@ -14,9 +15,13 @@ const ViewTypesButton = (props: ArcaneButtonProps) => {
         id="toggle-button-01"
         value={1}
         onClick={() => props.handleSetSeeTypes(!props.seeTypes)}
-        style={{borderColor: "cyan", paddingLeft: "10px", paddingRight: "10px"}}
-      >
-        <strong>Moedas</strong>
+        style={{
+          borderColor: "cyan",
+          paddingLeft: "10px",
+          paddingRight: "10px",
+          fontWeight: "bold"
+        }}>
+        Moedas
       </ToggleButton>
     </ToggleButtonGroup>
   );

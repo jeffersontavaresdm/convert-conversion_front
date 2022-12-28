@@ -1,26 +1,26 @@
-import axios from "axios";
-import {apiBaseUrl} from "../../apiBaseUrl";
 import CurrencyTypes from "../dto/CurrencyTypes";
 import AssetCurrency from "../dto/AssetCurrency";
+import axiosClient from "../../axiosClient";
+import ResponseResult from "../dto/ResponseResult";
 
 class ApiService {
 
   async getTypes() {
-    const data = await axios.get<CurrencyTypes>(apiBaseUrl.concat("/types"));
-    return data.data;
+    let response = await axiosClient.get<CurrencyTypes>("/types");
+    return response.data;
   }
 
   async convert(from: string, to: string) {
-    return await axios
-      .get<AssetCurrency>(apiBaseUrl.concat(`/convert?from=${from}&to=${to}`))
+    return await axiosClient
+      .get<AssetCurrency>(`/convert?from=${from}&to=${to}`)
       .catch(error => {
         return error
       });
   }
 
-  async getAll() {
-    let data = await axios.get<AssetCurrency[]>(apiBaseUrl.concat("/all"));
-    return data.data;
+  async allConversions(page: number | undefined = 0, limit: number | undefined = 100) {
+    let response = await axiosClient.get<ResponseResult>(`/all?page=${(page - 1)}&limit=${limit}`);
+    return response.data;
   }
 }
 

@@ -1,9 +1,9 @@
 $bg: #333;
 $push-color: hsla(10, 90%, 40%, 1);
 
-$push-size: 200px;
+$push-size: 100px;
 
-[class*="push"] {
+.brl-arcade-button {
   position: relative;
   display: inline-block;
   width: $push-size;
@@ -15,9 +15,7 @@ $push-size: 200px;
   border-radius: 50%;
   cursor: pointer;
   transition: box-shadow 200ms;
-}
 
-.push--skeuo {
   box-shadow: inset 0 $push-size/24 0 lighten($push-color, 5%),
   inset 0 (-$push-size/24) $push-size/60 darken($push-color, 5%),
   0 0 $push-size/60 $push-color,

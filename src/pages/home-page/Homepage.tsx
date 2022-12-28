@@ -1,5 +1,5 @@
 import React from "react";
-import ArcadeButton from "../../components/ArcadeButton";
+import HomepageArcadeButtons from "../../components/HomepageArcadeButton";
 
 const Homepage = () => {
   document.title = "Homepage"
@@ -41,7 +41,7 @@ const Homepage = () => {
         </span>
       </div>
       <div style={{marginTop: "80px", display: "flex", justifyContent: "center"}}>
-        <ArcadeButton/>
+        <HomepageArcadeButtons/>
       </div>
       <footer style={{
         position: "fixed",
