@@ -2,54 +2,58 @@
 
   #header-div {
     height: 70px;
+    width: 100%;
     background-color: #BDB76B;
-  }
+    display: flex;
+    flex-direction: row;
 
-  #header-img_name {
-    cursor: pointer;
-  }
+    #header-img_name {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      width: 50%;
 
-  #icon-img {
-    width: 55px;
-    position: absolute;
-    top: 75px;
-    left: 150px;
-  }
+      #icon-img {
+        width: 55px;
+        margin-left: 10%;
+      }
 
-  #header-name {
-    font-family: 'Fontype Rounded', sans-serif;
-    color: #222;
-    font-size: 24px;
-    font-weight: bold;
-    position: absolute;
-    top: 87px;
-    left: 213px;
-  }
+      #header-name {
+        font-family: 'Fontype Rounded', sans-serif;
+        color: #222;
+        font-size: 24px;
+        font-weight: bold;
+        margin-left: 10px;
+      }
+    }
 
-  #header-about {
-    color: #222;
-    font-size: 20px;
-    position: absolute;
-    top: 90px;
-    right: 500px;
-    cursor: pointer;
-  }
+    #header-features {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: end;
+      width: 50%;
 
-  #header-skills {
-    color: #222;
-    font-size: 20px;
-    position: absolute;
-    top: 90px;
-    right: 380px;
-    cursor: pointer;
-  }
+      #header-about {
+        color: #222;
+        font-size: 20px;
+        cursor: pointer;
+        margin-right: 10%;
+      }
 
-  #header-contact {
-    color: #222;
-    font-size: 20px;
-    position: absolute;
-    top: 90px;
-    right: 240px;
-    cursor: pointer;
+      #header-skills {
+        color: #222;
+        font-size: 20px;
+        cursor: pointer;
+        margin-right: 10%;
+      }
+
+      #header-contact {
+        color: #222;
+        font-size: 20px;
+        cursor: pointer;
+        margin-right: 10%;
+      }
+    }
   }
 }

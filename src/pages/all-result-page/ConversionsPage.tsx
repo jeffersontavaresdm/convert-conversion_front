@@ -7,15 +7,14 @@ import ApiService from "../../service/AssetService";
 import AppPagination from "../../components/AppPagination";
 import ResponseResult from "../../dto/ResponseResult";
 
-const ConversionsToBRLPage = () => {
+const ConversionsPage = () => {
   document.title = "Conversion to BRL";
 
   const PAGE_LIMIT = 10;
 
   const [buttonClicked, setButtonClicked] = useState<boolean>(false)
-  const [result, setResult] = useState<ResponseResult>({assets: [], entityCount: 0})
+  const [result, setResult] = useState<ResponseResult>({ assets: [], entityCount: 0 })
   const [page, setPage] = useState<number>(1)
-
 
   const assetsHandler = (currencies: AssetCurrency[] | undefined) => {
     if (currencies) {
@@ -41,8 +40,8 @@ const ConversionsToBRLPage = () => {
       let result = await ApiService.allConversions(page, PAGE_LIMIT);
       setResult(
         buttonClicked
-          ? {assets: filterAssets(result.assets), entityCount: result.entityCount}
-          : {assets: assetsHandler(result.assets), entityCount: result.entityCount}
+          ? { assets: filterAssets(result.assets), entityCount: result.entityCount }
+          : { assets: assetsHandler(result.assets), entityCount: result.entityCount }
       );
     })()
   }, [buttonClicked, page])
@@ -70,37 +69,33 @@ const ConversionsToBRLPage = () => {
   }
 
   return (
-    result && result.entityCount == 0
-      ? <div style={{position: "absolute", left: "50%", top: "50%", translate: "-50% -50%"}}><AppSpinner/></div>
-      : <div>
-        <div style={{marginLeft: "570px"}}>
+    !result || result.entityCount == 0
+      ? <div style={{ position: "absolute", left: "50%", top: "50%", translate: "-50% -50%" }} ><AppSpinner /></div >
+      : <div >
+        <div style={{ display: "flex", flexDirection: "column", textAlign: "center" }} >
           <h1 style={{
-            // backgroundColor: "black",
-            paddingTop: "100px",
-            marginBottom: "100px",
             fontWeight: "bold",
             fontSize: "60px",
             color: "coral",
             fontFamily: "Times New Roman",
-            cursor: "pointer"
-          }} onClick={() => window.location.href = "/"}
+          }}
           >
-            Conversor de Moedas
-          </h1>
-          <h2 style={{marginTop: "50px", color: "white", fontStyle: "italic"}}>
+            <span style={{ cursor: "pointer" }} onClick={() => window.location.href = "/"} >
+              Conversor de Moedas
+            </span >
+          </h1 >
+          <h2 style={{ marginTop: "50px", color: "white", fontStyle: "italic" }} >
             Aqui, podemos ver todos os tipos de moeda convertido pelos usuários até o momento!
-          </h2>
-        </div>
+          </h2 >
+        </div >
         <div style={{
-          // backgroundColor: "darkred",
           width: "100%",
           height: "100%",
           marginTop: "50px",
           display: "flex",
           flexDirection: "row"
-        }}>
+        }} >
           <div style={{
-            // backgroundColor: "darkgray",
             width: "650px",
             display: "flex",
             flexDirection: "column",
@@ -108,27 +103,27 @@ const ConversionsToBRLPage = () => {
             justifyContent: "start",
             marginLeft: "50px",
             marginRight: "50px"
-          }}>
-            <span id={"brl-filter-span"} style={{color: "white", fontSize: "24px"}}>
+          }} >
+            <span id={"brl-filter-span"} style={{ color: "white", fontSize: "24px" }} >
               {
                 !buttonClicked
-                  ? <span>Filtrar por moedas convertidas para <strong>BRL</strong></span>
-                  : <span><strong>Todas</strong> as conversões</span>
+                  ? <span >Filtrar por moedas convertidas para <strong >BRL</strong ></span >
+                  : <span ><strong >Todas</strong > as conversões</span >
               }
-            </span>
-            <div style={{marginTop: "50px"}}>
-              <AllConversionsArcadeButton buttonClicked={buttonClicked} setButtonClicked={setButtonClicked}/>
-            </div>
-          </div>
+            </span >
+            <div style={{ marginTop: "50px" }} >
+              <AllConversionsArcadeButton buttonClicked={buttonClicked} setButtonClicked={setButtonClicked} />
+            </div >
+          </div >
           <div
             style={{
-              // backgroundColor: "black",
               width: "100%",
               display: "flex",
-              justifyContent: "end",
+              justifyContent: "start",
+              alignItems: "end",
               flexDirection: "column",
               marginRight: "2%",
-            }}>
+            }} >
             <Table
               striped
               bordered
@@ -140,46 +135,45 @@ const ConversionsToBRLPage = () => {
                 textAlign: "center",
               }}
             >
-              <thead>
-              <tr>
-                <th style={{padding: "16px"}}>#</th>
-                <th style={{padding: "16px"}}>De</th>
-                <th style={{padding: "16px"}}>Para</th>
-                <th style={{padding: "16px"}}>Valor Convertido</th>
-                <th style={{padding: "16px"}}>Valor de venda</th>
-                <th style={{padding: "16px"}}>Ultima atualização</th>
-              </tr>
-              </thead>
-              <tbody>
+              <thead >
+              <tr >
+                <th style={{ padding: "16px" }} >#</th >
+                <th style={{ padding: "16px" }} >De</th >
+                <th style={{ padding: "16px" }} >Para</th >
+                <th style={{ padding: "16px" }} >Valor Convertido</th >
+                <th style={{ padding: "16px" }} >Valor de venda</th >
+                <th style={{ padding: "16px" }} >Ultima atualização</th >
+              </tr >
+              </thead >
+              <tbody >
               {
                 result && result.entityCount >= 1
                   ? assetsHandler(result.assets).map((asset, index) => {
-                    return <tr key={index}>
-                      <td style={{padding: "16px"}}>{(page - 1) * 10 + (index + 1)}</td>
-                      <td style={{padding: "16px"}}>{fromName(asset)}</td>
-                      <td style={{padding: "16px"}}>{toName(asset)}</td>
-                      <td style={{padding: "16px"}}>{asset.convertedValue}</td>
-                      <td style={{padding: "16px"}}>{asset.saleValue}</td>
-                      <td style={{padding: "16px"}}>{formatedDate(asset)}</td>
-                    </tr>
+                    return <tr key={index} >
+                      <td style={{ padding: "16px" }} >{(page - 1) * 10 + (index + 1)}</td >
+                      <td style={{ padding: "16px" }} >{fromName(asset)}</td >
+                      <td style={{ padding: "16px" }} >{toName(asset)}</td >
+                      <td style={{ padding: "16px" }} >{asset.convertedValue}</td >
+                      <td style={{ padding: "16px" }} >{asset.saleValue}</td >
+                      <td style={{ padding: "16px" }} >{formatedDate(asset)}</td >
+                    </tr >
                   })
                   : <></>
               }
-              </tbody>
-            </Table>
-            <div style={{display: "flex", justifyContent: "end"}}>
+              </tbody >
+            </Table >
+            <div style={{ display: "flex", justifyContent: "end" }} >
               <AppPagination
                 total={result.entityCount > PAGE_LIMIT ? Math.round(result.entityCount / PAGE_LIMIT) : 1}
                 current={page}
                 onChangePage={handlerChangePage}
                 page={page}
               />
-            </div>
-          </div>
-        </div>
-      </div>
-  )
-    ;
+            </div >
+          </div >
+        </div >
+      </div >
+  );
 }
 
-export default ConversionsToBRLPage;
+export default ConversionsPage;

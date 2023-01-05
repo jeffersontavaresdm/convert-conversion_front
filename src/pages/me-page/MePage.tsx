@@ -50,18 +50,20 @@ const MePage = () => {
     <div id={"main-div"}>
       <div id={"header-div"}>
         <div id={"header-img_name"} onClick={() => window.location.href = "/"}>
-          <img id={"icon-img"} src="svg/radar.svg" alt={"img01"}/>
+          <img id={"icon-img"} src="src/img/svg/radar.svg" alt={"img01"}/>
           <span id={"header-name"}>Jefferson Tavares</span>
         </div>
-        <span className={"header-element"} id={"header-about"} onClick={() => setAbout(true)}>
+        <div id={"header-features"}>
+          <span className={"header-element"} id={"header-about"} onClick={() => setAbout(true)}>
           About
         </span>
-        <span className={"header-element"} id={"header-skills"} onClick={() => setSkills(true)}>
+          <span className={"header-element"} id={"header-skills"} onClick={() => setSkills(true)}>
           Skills
         </span>
-        <span className={"header-element"} id={"header-contact"} onClick={() => setContacts(true)}>
+          <span className={"header-element"} id={"header-contact"} onClick={() => setContacts(true)}>
           Contacts
         </span>
+        </div>
       </div>
       {
         about ? <AboutPage/> : (skills ? <SkillPage/> : (contacts ? <ContactsPage/> : <></>))

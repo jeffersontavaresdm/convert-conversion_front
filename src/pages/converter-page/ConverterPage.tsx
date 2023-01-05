@@ -36,11 +36,9 @@ export const ConverterPage = () => {
   }
 
   React.useEffect(() => {
-    if (!types) {
       (async () => setTypes(await ApiService.getTypes()))()
       setInterval(() => (async () => setTypes(await ApiService.getTypes()))(), 60_000)
-    }
-  }, [types])
+  }, [])
 
   React.useEffect(() => {
     if (seeTypes) {
