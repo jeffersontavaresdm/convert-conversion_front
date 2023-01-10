@@ -1,5 +1,6 @@
 .navlink {
+  font-size: 24px;
+  font-weight: bold;
   color: goldenrod;
   font-family: "Times New Roman", serif;
-  margin-left: 32px;
 }

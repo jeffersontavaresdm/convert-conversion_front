@@ -18,24 +18,24 @@ function CurrencyDropdown(props: AssetDropdownProps) {
   return (
     <DropdownButton
       id="dropdown-item-button"
-      title={title}
-      onSelect={handleSelect}
-      style={{border: "1px solid cyan", borderRadius: "6px"}}
+      title={ title }
+      onSelect={ handleSelect }
+      style={ { border: "1px solid cyan", borderRadius: "6px" } }
     >
       {
         codes.map(code => {
           return <Dropdown.Item
             as="button"
-            eventKey={code}
-            key={code}
-            style={{textAlign: "center"}}
-            onClick={() => setTitle(code)}
+            eventKey={ code }
+            key={ code }
+            style={ { textAlign: "center" } }
+            onClick={ () => setTitle(code) }
           >
-            {code}
-          </Dropdown.Item>
+            { code }
+          </Dropdown.Item >
         })
       }
-    </DropdownButton>
+    </DropdownButton >
   );
 }
 
