@@ -55,125 +55,98 @@ const ClickDot = () => {
   }
 
   return (
-    <div style={{display: "flex", justifyContent: "start"}}>
-      <div onClick={clickHandler} style={{margin: "8px", display: "inline-block"}}>
-        <img src="src/img/map.jpg" alt="" style={{width: "100%"}}/>
+    <div style={ { height: "900px", width: "85%" } } >
+      <div onClick={ clickHandler } style={ { margin: "4px", display: "inline-block" } } >
+        <img
+          src="src/img/map.jpg"
+          alt="map-img"
+          style={ { width: "100%", opacity: "0.8" } }
+          onDragStart={ event => event.preventDefault() } />
         {
           dots.length != 0
             ? dots.map((dot, index) => {
               return <div
-                key={index}
-                style={{
+                key={ index }
+                style={ {
                   backgroundColor: "goldenrod",
                   border: "2px solid black",
                   borderRadius: "100%",
-                  width: "8px",
-                  height: "8px",
+                  width: "10px",
+                  height: "10px",
                   position: "absolute",
                   left: dot.left,
                   top: dot.top
-                }}></div>
+                } } ></div >
             })
             : <></>
         }
-      </div>
-      <div style={{width: "200px", display: "flex", flexDirection: "column", alignItems: "center"}}>
+      </div >
+      <div style={ {
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        position: "absolute",
+        left: "89%",
+        top: "16%"
+      } } >
         <Button
           as="input"
           type="button"
-          value={"Desfazer"}
-          style={{
+          value={ "Desfazer" }
+          style={ {
+            color: "gold",
+            borderColor: "cyan",
+            borderRadius: "100%",
+            fontWeight: "bold",
+            fontSize: "20px",
+            width: "120px",
+            height: "120px",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          } }
+          onClick={ undoHandler }
+        />
+        <Button
+          as="input"
+          type="button"
+          value={ "Refazer" }
+          style={ {
             color: "gold",
             marginTop: "200px",
             borderColor: "cyan",
             borderRadius: "100%",
             fontWeight: "bold",
             fontSize: "20px",
-            width: "100px",
-            height: "100px",
+            width: "120px",
+            height: "120px",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-          }}
-          onClick={undoHandler}
+          } }
+          onClick={ undidHandler }
         />
         <Button
           as="input"
           type="button"
-          value={"Refazer"}
-          style={{
+          value={ "Limpar" }
+          style={ {
             color: "gold",
             marginTop: "200px",
             borderColor: "cyan",
             borderRadius: "100%",
             fontWeight: "bold",
             fontSize: "20px",
-            width: "100px",
-            height: "100px",
+            width: "120px",
+            height: "120px",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-          }}
-          onClick={undidHandler}
+          } }
+          onClick={ clearHandle }
         />
-        <Button
-          as="input"
-          type="button"
-          value={"Limpar"}
-          style={{
-            color: "gold",
-            marginTop: "200px",
-            borderColor: "cyan",
-            borderRadius: "100%",
-            fontWeight: "bold",
-            fontSize: "20px",
-            width: "100px",
-            height: "100px",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-          onClick={clearHandle}
-        />
-      </div>
-      {/*<div*/}
-      {/*  style={{*/}
-      {/*    position: "absolute",*/}
-      {/*    top: "10px",*/}
-      {/*    left: "87%",*/}
-      {/*  }}>*/}
-      {/*  <h1*/}
-      {/*    style={{textAlign: "center", color: "goldenrod", fontFamily: "Source Code Pro, monospace", fontSize: "30px"}}>*/}
-      {/*    <strong>Coordenadas</strong>*/}
-      {/*  </h1>*/}
-      {/*  <Table*/}
-      {/*    striped*/}
-      {/*    bordered*/}
-      {/*    hover*/}
-      {/*    variant="dark"*/}
-      {/*    style={{border: "2px solid darkcyan", textAlign: "center"}}*/}
-      {/*  >*/}
-      {/*    <thead>*/}
-      {/*    <tr>*/}
-      {/*      <th>X</th>*/}
-      {/*      <th>Y</th>*/}
-      {/*    </tr>*/}
-      {/*    </thead>*/}
-      {/*    <tbody>*/}
-      {/*    {*/}
-      {/*      dots.map((dot, index) => {*/}
-      {/*        return (*/}
-      {/*          <tr key={index}>*/}
-      {/*            <td>{dot.left}</td>*/}
-      {/*            <td>{dot.top}</td>*/}
-      {/*          </tr>*/}
-      {/*        )*/}
-      {/*      })*/}
-      {/*    }*/}
-      {/*    </tbody>*/}
-      {/*  </Table>*/}
-      {/*</div>*/}
-    </div>
+      </div >
+    </div >
   );
 }
 

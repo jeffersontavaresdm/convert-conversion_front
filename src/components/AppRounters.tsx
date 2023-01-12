@@ -10,7 +10,7 @@ import AppNavbar from "./AppNavbar";
 export const AppRounters = () => {
   return (
     <Router >
-      <AppNavbar/>
+      <AppNavbar />
       <Routes >
         <Route path="/f" element={ <FirstElement /> } />
         <Route path="/" element={ <Homepage /> } />

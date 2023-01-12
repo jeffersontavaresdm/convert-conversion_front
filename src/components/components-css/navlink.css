@@ -3,4 +3,29 @@
   font-weight: bold;
   color: goldenrod;
   font-family: "Times New Roman", serif;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.back-button {
+  border: 2px solid goldenrod;
+  background-color: transparent;
+  color: goldenrod;
+  font-family: "Times New Roman", serif;
+  padding: 4px 12px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: darkslategray;
+}
+
+.back-button:active {
+  background-color: #3e8e41;
 }

@@ -12,7 +12,7 @@ const Homepage = () => {
   const handlePage = () => {
     switch (page) {
       case "about":
-        return <AboutPage />
+        return <AboutPage setPage={ setPage } />
       case "skills":
         return <SkillPage />
       case "contacts":
@@ -20,22 +20,30 @@ const Homepage = () => {
     }
   }
 
+  const clearRefs = () => {
+    aboutRef.current!!.style.textDecoration = "none"
+    skillsRef.current!!.style.textDecoration = "none"
+    contactsRef.current!!.style.textDecoration = "none"
+
+    aboutRef.current!!.style.fontWeight = "normal"
+    skillsRef.current!!.style.fontWeight = "normal"
+    contactsRef.current!!.style.fontWeight = "normal"
+  }
+
   React.useEffect(() => {
+    clearRefs()
     switch (page) {
       case "about":
         aboutRef.current!!.style.textDecoration = "underline"
-        skillsRef.current!!.style.textDecoration = "none"
-        contactsRef.current!!.style.textDecoration = "none"
+        aboutRef.current!!.style.fontWeight = "bold"
         break;
       case "skills":
-        aboutRef.current!!.style.textDecoration = "none"
         skillsRef.current!!.style.textDecoration = "underline"
-        contactsRef.current!!.style.textDecoration = "none"
+        skillsRef.current!!.style.fontWeight = "bold"
         break;
       case "contacts":
-        aboutRef.current!!.style.textDecoration = "none"
-        skillsRef.current!!.style.textDecoration = "none"
         contactsRef.current!!.style.textDecoration = "underline"
+        contactsRef.current!!.style.fontWeight = "bold"
         break;
     }
   }, [page])
