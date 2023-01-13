@@ -93,6 +93,9 @@ const AboutPage: React.FunctionComponent<AboutPageProps> = ({ setPage }) => {
           </footer >
         </div >
       </div >
+      <footer style={ { position: "fixed", fontSize: "12px", right: "24px", bottom: "24px", } } >
+        <h3 style={ { fontSize: "18px", fontFamily: "Sigmar One" } } >See ya!</h3 >
+      </footer >
     </>
   );
 }

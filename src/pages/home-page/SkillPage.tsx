@@ -83,12 +83,13 @@ const SkillPage: React.FunctionComponent<SkillPageProps> = ({ setPage }) => {
               <b >contatos</b >
             </span >&nbsp;
             caso queira trocar uma ideia 😄
-            <br />
-            See ya!
           </p >
         </div >
       </div >
       <hr style={ { color: "white" } } />
+      <footer style={ { position: "fixed", fontSize: "12px", right: "24px", bottom: "24px", } } >
+        <h3 style={ { fontSize: "18px", fontFamily: "Sigmar One" } } >See ya!</h3 >
+      </footer >
     </>
   );
 }

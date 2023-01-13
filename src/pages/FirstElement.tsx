@@ -1,5 +1,5 @@
 import React from "react";
-import HomepageArcadeButtons from "../../components/HomepageArcadeButton";
+import HomepageArcadeButtons from "../components/HomepageArcadeButton";
 import {Link} from "react-router-dom";
 
 const FirstElement = () => {
