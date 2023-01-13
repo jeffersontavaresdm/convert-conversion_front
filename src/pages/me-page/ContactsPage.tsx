@@ -1,5 +1,5 @@
 const ContactsPage = () => {
-  document.title = "Contacts"
+  document.title = "Contatos"
 
   return (<h1>Contacts Page</h1>);
 }

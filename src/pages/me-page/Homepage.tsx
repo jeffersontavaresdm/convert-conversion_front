@@ -57,13 +57,13 @@ const Homepage = () => {
         </div >
         <div id={ "header-features" } >
           <span ref={ aboutRef } id={ "header-about" } onClick={ () => setPage("about") } >
-          About
+          Sobre
         </span >
           <span ref={ skillsRef } id={ "header-skills" } onClick={ () => setPage("skills") } >
-          Skills
+          Habilidades
         </span >
           <span ref={ contactsRef } id={ "header-contact" } onClick={ () => setPage("contacts") } >
-          Contacts
+          Contatos
         </span >
         </div >
       </div >
