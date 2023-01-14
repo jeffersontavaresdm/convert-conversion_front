@@ -10,7 +10,7 @@ const AboutPage: React.FunctionComponent<AboutPageProps> = ({ setPage }) => {
 
   return (
     <>
-      <h1 style={ { textAlign: "center", marginTop: "36px", fontSize: "45px", fontFamily: "Sigmar One" } } >
+      <h1 style={ { textAlign: "center", marginTop: "36px", fontSize: "60px", fontFamily: "Sigmar One" } } >
         Olá, eu sou o Jefferson
       </h1 >
       <div style={ {
@@ -62,7 +62,7 @@ const AboutPage: React.FunctionComponent<AboutPageProps> = ({ setPage }) => {
             entre em contato comigo! Estou sempre disposto a ouvir o que você tem a dizer.
           </p >
           <footer style={ {
-            backgroundColor: "darkkhaki",
+            backgroundColor: "cadetblue",
             color: "black",
             textAlign: "center",
             padding: "20px",
@@ -71,21 +71,20 @@ const AboutPage: React.FunctionComponent<AboutPageProps> = ({ setPage }) => {
             fontSize: "20px",
             borderRadius: "100px"
           } } >
-            Você também pode ver alguns projetinhos aqui mesmo, clicando
-            &nbsp;<Link to={ "/dot" } ><b >aqui</b ></Link >&nbsp;
-            para ver um projetinho em react simples ou
-            &nbsp;<Link to={ "/currency-conversion" } ><b >aqui</b ></Link >&nbsp;
-            para ver um projeto de <strong >conversão de moedas</strong >.
+            Você pode ver um projetinho de <strong >conversão de moedas</strong > aqui mesmo clicando
+            &nbsp;<Link to={ "/currency-conversion" } style={ { color: "blue" } } ><b >aqui</b ></Link >.
             <br />
             Veja também a pagina de
             &nbsp;<span
-            style={ { cursor: "pointer", textDecoration: "underline", color: "forestgreen" } }
+            style={ { cursor: "pointer", textDecoration: "underline", color: "blue" } }
             onClick={ () => setPage("skills") } >
               <b >habilidades</b >
             </span >&nbsp;
-            para ver um pouco sobre minhas <b >hard</b > e <b >soft</b > skills e
+            para ver um pouco sobre minhas <b >hard</b > e <b >soft</b > skills.
+            <br />
+            E por último,
             &nbsp;<span
-            style={ { cursor: "pointer", textDecoration: "underline", color: "forestgreen" } }
+            style={ { cursor: "pointer", textDecoration: "underline", color: "blue" } }
             onClick={ () => setPage("contacts") } >
               <b >contatos</b >
             </span >&nbsp;
@@ -93,9 +92,6 @@ const AboutPage: React.FunctionComponent<AboutPageProps> = ({ setPage }) => {
           </footer >
         </div >
       </div >
-      <footer style={ { position: "fixed", fontSize: "12px", right: "24px", bottom: "24px", } } >
-        <h3 style={ { fontSize: "18px", fontFamily: "Sigmar One" } } >See ya!</h3 >
-      </footer >
     </>
   );
 }

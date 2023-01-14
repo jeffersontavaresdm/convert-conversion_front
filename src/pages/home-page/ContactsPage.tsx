@@ -1,4 +1,5 @@
 import React from "react";
+import ContactsButton from "../../components/contacts-button/ContactsButton";
 
 const ContactsPage = () => {
   document.title = "Contatos"
@@ -15,65 +16,64 @@ const ContactsPage = () => {
           <h3 style={ { color: "white", marginTop: "60px" } } >
             Para entrar em contato comigo ou apenas para ver um pouco mais sobre mim, vá até:
           </h3 >
-          <br />
-          <ul style={ { color: "cadetblue" } } >
-            <li >
-              <a
-                href="https://linkedin.com/in/jefferson-tavares"
-                target="_blank"
-                style={ { fontStyle: "italic", fontSize: "20px", color: "cadetblue" } } >
-                <b >Linkedin</b >
-              </a >
-            </li >
-            <li style={ { marginTop: "12px" } } >
-              <a
-                href="https://github.com/jeffersontavaresdm"
-                target="_blank"
-                style={ { fontStyle: "italic", fontSize: "20px", color: "cadetblue" } } >
-                <b >GitHub</b >
-              </a >
-            </li >
-            <li style={ { marginTop: "12px" } } >
-              <a
-                href="https://wa.me/+5585985800297"
-                target="_blank"
-                style={ { fontStyle: "italic", fontSize: "20px", color: "cadetblue" } } >
-                <b >Whatsapp</b >
-              </a >
-            </li >
-            <li style={ { marginTop: "12px" } } >
-              <a
-                href="https://t.me/jeffersontdm"
-                target="_blank"
-                style={ { fontStyle: "italic", fontSize: "20px", color: "cadetblue" } } >
-                <b >Telegram</b >
-              </a >
-            </li >
-            <li style={ { marginTop: "12px" } } >
-              <a
-                href="https://twitter.com/JFFTXD"
-                target="_blank"
-                style={ { fontStyle: "italic", fontSize: "20px", color: "cadetblue" } } >
-                <b >Twitter</b >
-              </a >
-            </li >
-            <li style={ { marginTop: "12px" } } >
-              <a
-                href="https://discord.com/users/jeffersontdm#1604"
-                target="_blank"
-                style={ { fontStyle: "italic", fontSize: "20px", color: "cadetblue" } } >
-                <b >Discord</b >
-              </a >
-            </li >
-            <li style={ { marginTop: "12px" } } >
-              <a
-                href="https://instagram.com/jeffersontdm_"
-                target="_blank"
-                style={ { fontStyle: "italic", fontSize: "20px", color: "cadetblue" } } >
-                <b >Instagram</b >
-              </a >
-            </li >
-          </ul >
+          <div style={ { display: "flex", flexDirection: "row", marginTop: "30px" } } >
+            <ContactsButton
+              name={ "Linkedin" }
+              withName={ false }
+              nameSize={ 20 }
+              size={ 50 }
+              margin={ 20 }
+              link={ "https://linkedin.com/in/jefferson-tavares" }
+            />
+            <ContactsButton
+              name={ "GitHub" }
+              withName={ false }
+              nameSize={ 20 }
+              size={ 50 }
+              margin={ 20 }
+              link={ "https://github.com/jeffersontavaresdm" }
+            />
+            <ContactsButton
+              name={ "Whatsapp" }
+              withName={ false }
+              nameSize={ 20 }
+              size={ 50 }
+              margin={ 20 }
+              link={ "https://wa.me/+5585985800297" }
+            />
+            <ContactsButton
+              name={ "Telegram" }
+              withName={ false }
+              nameSize={ 20 }
+              size={ 50 }
+              margin={ 20 }
+              link={ "https://t.me/jeffersontdm" }
+            />
+            <ContactsButton
+              name={ "Discord" }
+              withName={ false }
+              nameSize={ 20 }
+              size={ 50 }
+              margin={ 20 }
+              link={ "https://discord.com/users/jeffersontdm#1604" }
+            />
+            <ContactsButton
+              name={ "Twitter" }
+              withName={ false }
+              nameSize={ 20 }
+              size={ 50 }
+              margin={ 20 }
+              link={ "https://twitter.com/JFFTXD" }
+            />
+            <ContactsButton
+              name={ "Instagram" }
+              withName={ false }
+              nameSize={ 20 }
+              size={ 50 }
+              margin={ 20 }
+              link={ "https://www.instagram.com/jeffersontdm_" }
+            />
+          </div >
         </div >
       </div >
       <footer style={ { position: "fixed", fontSize: "12px", right: "24px", bottom: "24px", } } >

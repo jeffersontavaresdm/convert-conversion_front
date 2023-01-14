@@ -70,32 +70,32 @@ const ConversionsPage = () => {
 
   return (
     !result || result.entityCount == 0
-      ? <div style={{ position: "absolute", left: "50%", top: "50%", translate: "-50% -50%" }} ><AppSpinner /></div >
+      ? <div style={ { position: "absolute", left: "50%", top: "50%", translate: "-50% -50%" } } ><AppSpinner /></div >
       : <div >
-        <div style={{ display: "flex", flexDirection: "column", textAlign: "center" }} >
-          <h1 style={{
+        <div style={ { display: "flex", flexDirection: "column", textAlign: "center" } } >
+          <h1 style={ {
             fontWeight: "bold",
             fontSize: "60px",
             color: "coral",
             fontFamily: "Times New Roman",
-          }}
+          } }
           >
-            <span style={{ cursor: "pointer" }} onClick={() => window.location.href = "/"} >
+            <span style={ { cursor: "pointer" } } onClick={ () => window.location.href = "/" } >
               Conversor de Moedas
             </span >
           </h1 >
-          <h2 style={{ marginTop: "50px", color: "white", fontStyle: "italic" }} >
+          <h2 style={ { marginTop: "50px", color: "white", fontStyle: "italic" } } >
             Aqui, podemos ver todos os tipos de moeda convertido pelos usuários até o momento!
           </h2 >
         </div >
-        <div style={{
+        <div style={ {
           width: "100%",
           height: "100%",
           marginTop: "50px",
           display: "flex",
           flexDirection: "row"
-        }} >
-          <div style={{
+        } } >
+          <div style={ {
             width: "650px",
             display: "flex",
             flexDirection: "column",
@@ -103,71 +103,71 @@ const ConversionsPage = () => {
             justifyContent: "start",
             marginLeft: "50px",
             marginRight: "50px"
-          }} >
-            <span id={"brl-filter-span"} style={{ color: "white", fontSize: "24px" }} >
+          } } >
+            <span id={ "brl-filter-span" } style={ { color: "white", fontSize: "24px" } } >
               {
                 !buttonClicked
                   ? <span >Filtrar por moedas convertidas para <strong >BRL</strong ></span >
                   : <span ><strong >Todas</strong > as conversões</span >
               }
             </span >
-            <div style={{ marginTop: "50px" }} >
-              <AllConversionsArcadeButton buttonClicked={buttonClicked} setButtonClicked={setButtonClicked} />
+            <div style={ { marginTop: "50px" } } >
+              <AllConversionsArcadeButton buttonClicked={ buttonClicked } setButtonClicked={ setButtonClicked } />
             </div >
           </div >
           <div
-            style={{
+            style={ {
               width: "100%",
               display: "flex",
               justifyContent: "start",
               alignItems: "end",
               flexDirection: "column",
               marginRight: "2%",
-            }} >
+            } } >
             <Table
               striped
               bordered
               hover
-              variant={"dark"}
+              variant={ "dark" }
               size="sm"
-              style={{
+              style={ {
                 border: "2px solid darkcyan",
                 textAlign: "center",
-              }}
+              } }
             >
               <thead >
               <tr >
-                <th style={{ padding: "16px" }} >#</th >
-                <th style={{ padding: "16px" }} >De</th >
-                <th style={{ padding: "16px" }} >Para</th >
-                <th style={{ padding: "16px" }} >Valor Convertido</th >
-                <th style={{ padding: "16px" }} >Valor de venda</th >
-                <th style={{ padding: "16px" }} >Ultima atualização</th >
+                <th style={ { padding: "16px" } } >#</th >
+                <th style={ { padding: "16px" } } >De</th >
+                <th style={ { padding: "16px" } } >Para</th >
+                <th style={ { padding: "16px" } } >Valor Convertido</th >
+                <th style={ { padding: "16px" } } >Valor de venda</th >
+                <th style={ { padding: "16px" } } >Ultima atualização</th >
               </tr >
               </thead >
               <tbody >
               {
                 result && result.entityCount >= 1
                   ? assetsHandler(result.assets).map((asset, index) => {
-                    return <tr key={index} >
-                      <td style={{ padding: "16px" }} >{(page - 1) * 10 + (index + 1)}</td >
-                      <td style={{ padding: "16px" }} >{fromName(asset)}</td >
-                      <td style={{ padding: "16px" }} >{toName(asset)}</td >
-                      <td style={{ padding: "16px" }} >{asset.convertedValue}</td >
-                      <td style={{ padding: "16px" }} >{asset.saleValue}</td >
-                      <td style={{ padding: "16px" }} >{formatedDate(asset)}</td >
+                    return <tr key={ index } >
+                      <td style={ { padding: "16px" } } >{ (page - 1) * 10 + (index + 1) }</td >
+                      <td style={ { padding: "16px" } } >{ fromName(asset) }</td >
+                      <td style={ { padding: "16px" } } >{ toName(asset) }</td >
+                      <td style={ { padding: "16px" } } >{ asset.convertedValue }</td >
+                      <td style={ { padding: "16px" } } >{ asset.saleValue }</td >
+                      <td style={ { padding: "16px" } } >{ formatedDate(asset) }</td >
                     </tr >
                   })
                   : <></>
               }
               </tbody >
             </Table >
-            <div style={{ display: "flex", justifyContent: "end" }} >
+            <div style={ { display: "flex", justifyContent: "end" } } >
               <AppPagination
-                total={result.entityCount > PAGE_LIMIT ? Math.round(result.entityCount / PAGE_LIMIT) : 1}
-                current={page}
-                onChangePage={handlerChangePage}
-                page={page}
+                total={ result.entityCount > PAGE_LIMIT ? Math.round(result.entityCount / PAGE_LIMIT) : 1 }
+                current={ page }
+                onChangePage={ handlerChangePage }
+                page={ page }
               />
             </div >
           </div >

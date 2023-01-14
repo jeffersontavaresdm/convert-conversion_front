@@ -1,10 +1,10 @@
 import React from "react";
 import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
-import {ConverterPage} from "../pages/converter-page/ConverterPage";
-import AllConversionsPage from "../pages/all-result-page/ConversionsPage";
-import ClickDot from "../pages/ClickDot";
+import {ConverterPage} from "../pages/currency-converter/ConverterPage";
+import AllConversionsPage from "../pages/currency-converter/ConversionsPage";
+import ClickDot from "../pages/other-pages/ClickDot";
 import Homepage from "../pages/home-page/Homepage";
-import FirstElement from "../pages/FirstElement";
+import FirstElement from "../pages/other-pages/FirstElement";
 import AppNavbar from "./AppNavbar";
 
 export const AppRounters = () => {

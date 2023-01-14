@@ -24,7 +24,7 @@ const SkillPage: React.FunctionComponent<SkillPageProps> = ({ setPage }) => {
       } } >
         <div style={ { display: "flex", flexDirection: "row" } } >
           <div style={ { display: "flex", flexDirection: "column", color: "cadetblue" } } >
-            <span style={ { fontSize: "30px", color: "white", fontWeight: "bold" } } >Hard Skills:</span >
+            <span style={ { fontSize: "30px", fontWeight: "bold" } } >Hard Skills:</span >
             <ul style={ { fontStyle: "italic", fontSize: "20px" } } >
               <li >Java</li >
               <li >Kotlin</li >
@@ -39,7 +39,7 @@ const SkillPage: React.FunctionComponent<SkillPageProps> = ({ setPage }) => {
             </ul >
           </div >
           <div style={ { display: "flex", flexDirection: "column", marginLeft: "360px", color: "cadetblue" } } >
-            <span style={ { fontSize: "30px", color: "white", fontWeight: "bold" } } >Soft Skills:</span >
+            <span style={ { fontSize: "30px", fontWeight: "bold" } } >Soft Skills:</span >
             <ul style={ { fontStyle: "italic", fontSize: "20px" } } >
               <li >Vontade de aprender</li >
               <li >Autonomia</li >
@@ -72,17 +72,17 @@ const SkillPage: React.FunctionComponent<SkillPageProps> = ({ setPage }) => {
           <p >
             Também é importante informar que não listei tudo,
             algumas habilidades eu tenho um certo conhecimento por ter trabalhado ou por ter estudado um pouco,
-            porém não me sinto muito confortável de mencionar aqui, mas com o tempo com certeza irei colocar nas
+            porém não me sinto muito confortável de mencionar aqui, mas eventualmente irei colocar nas
             listas pois continuo sempre estudando e logo terei a confiança nessessária para listá-las.
           </p >
           <p >
-            Bom, é isso, te convido para ver meus
+            Bom, é isso. Te convido a ver meus
             &nbsp;<span
             style={ { cursor: "pointer", textDecoration: "underline", color: "forestgreen" } }
             onClick={ () => setPage("contacts") } >
               <b >contatos</b >
             </span >&nbsp;
-            caso queira trocar uma ideia 😄
+            caso queira trocar uma ideia ou só ver um pouquinho a mais de mim 😄
           </p >
         </div >
       </div >

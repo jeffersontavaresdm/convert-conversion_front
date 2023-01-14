@@ -14,7 +14,7 @@ const Homepage = () => {
       case "about":
         return <AboutPage setPage={ setPage } />
       case "skills":
-        return <SkillPage />
+        return <SkillPage setPage={ setPage } />
       case "contacts":
         return <ContactsPage />
     }

@@ -16,13 +16,25 @@ function AppNavbar() {
       <Container >
         {
           location.pathname !== '/'
-            ? < button onClick={ handleClick } className="back-button" >&laquo; Back</button >
+            ? < button onClick={ handleClick } className="back-button" >&laquo; Voltar</button >
             : <div ></div >
         }
         <Nav >
-          <Nav.Link className={ "navlink" } href="/" >Home</Nav.Link >
-          <Nav.Link className={ "navlink" } href="/currency-conversion" >Currency Conversion</Nav.Link >
-          <Nav.Link className={ "navlink" } href="/dot" >Dot</Nav.Link >
+          <Nav.Link className={ "navlink" } href="/" disabled={ location.pathname === "/" } >
+            Home
+          </Nav.Link >
+          <Nav.Link
+            className={ "navlink" }
+            href="/currency-conversion"
+            disabled={ location.pathname === "/currency-conversion" } >
+            Conversor
+          </Nav.Link >
+          <Nav.Link className={ "navlink" } href="/all" disabled={ location.pathname === "/all" } >
+            Conversões
+          </Nav.Link >
+          <Nav.Link className={ "navlink" } href="/dot" disabled={ location.pathname === "/dot" } >
+            Pontos
+          </Nav.Link >
         </Nav >
       </Container >
     </Navbar >
