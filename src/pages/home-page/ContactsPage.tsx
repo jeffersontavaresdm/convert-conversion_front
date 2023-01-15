@@ -6,20 +6,19 @@ const ContactsPage = () => {
 
   return (
     <>
-      <h1 style={ { textAlign: "center", marginTop: "36px", fontSize: "60px", fontFamily: "Sigmar One" } } >
+      <h1 style={ { textAlign: "center", marginTop: "60px", fontSize: "60px", fontFamily: "Sigmar One" } } >
         Contatos
       </h1 >
-      <br />
-      <hr style={ { color: "white" } } />
+      <hr style={ { color: "white", marginTop: "60px" } } />
       <div style={ { display: "flex", justifyContent: "center", alignItems: "center" } } >
         <div style={ { display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center" } } >
-          <h3 style={ { color: "white", marginTop: "60px" } } >
-            Para entrar em contato comigo ou apenas para ver um pouco mais sobre mim, vá até:
+          <h3 style={ { color: "white", marginTop: "60px", fontFamily: "Chivo Mono" } } >
+            <b>Para entrar em contato comigo ou apenas para ver um pouco mais sobre mim, vá até:</b>
           </h3 >
-          <div style={ { display: "flex", flexDirection: "row", marginTop: "30px" } } >
+          <div style={ { display: "flex", flexDirection: "row", marginTop: "60px" } } >
             <ContactsButton
               name={ "Linkedin" }
-              withName={ false }
+              withName={ true }
               nameSize={ 20 }
               size={ 50 }
               margin={ 20 }
@@ -27,7 +26,7 @@ const ContactsPage = () => {
             />
             <ContactsButton
               name={ "GitHub" }
-              withName={ false }
+              withName={ true }
               nameSize={ 20 }
               size={ 50 }
               margin={ 20 }
@@ -35,7 +34,7 @@ const ContactsPage = () => {
             />
             <ContactsButton
               name={ "Whatsapp" }
-              withName={ false }
+              withName={ true }
               nameSize={ 20 }
               size={ 50 }
               margin={ 20 }
@@ -43,7 +42,7 @@ const ContactsPage = () => {
             />
             <ContactsButton
               name={ "Telegram" }
-              withName={ false }
+              withName={ true }
               nameSize={ 20 }
               size={ 50 }
               margin={ 20 }
@@ -51,7 +50,7 @@ const ContactsPage = () => {
             />
             <ContactsButton
               name={ "Discord" }
-              withName={ false }
+              withName={ true }
               nameSize={ 20 }
               size={ 50 }
               margin={ 20 }
@@ -59,7 +58,7 @@ const ContactsPage = () => {
             />
             <ContactsButton
               name={ "Twitter" }
-              withName={ false }
+              withName={ true }
               nameSize={ 20 }
               size={ 50 }
               margin={ 20 }
@@ -67,7 +66,7 @@ const ContactsPage = () => {
             />
             <ContactsButton
               name={ "Instagram" }
-              withName={ false }
+              withName={ true }
               nameSize={ 20 }
               size={ 50 }
               margin={ 20 }
@@ -76,8 +75,11 @@ const ContactsPage = () => {
           </div >
         </div >
       </div >
-      <footer style={ { position: "fixed", fontSize: "12px", right: "24px", bottom: "24px", } } >
-        <h3 style={ { fontSize: "18px", fontFamily: "Sigmar One" } } >See ya!</h3 >
+      <hr style={ { color: "white", marginTop: "60px" } } />
+      <footer style={ { textAlign: "center", marginTop: "60px" } } >
+        <h4 style={ { fontFamily: "Sigmar One", color: "lightblue" } } >
+          See ya!
+        </h4 >
       </footer >
     </>
   )

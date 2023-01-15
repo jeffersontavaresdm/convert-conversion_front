@@ -1,6 +1,8 @@
 import React from "react";
 import { css, StyleSheet } from 'aphrodite';
 import { Link } from "react-router-dom";
+import ContactsButton from "../../components/contacts-button/ContactsButton";
+import globalStyles from "../../components/contacts-button/globalStyles";
 
 interface AboutPageProps {
   setPage: (page: string) => void
@@ -9,43 +11,98 @@ interface AboutPageProps {
 const AboutPage: React.FunctionComponent<AboutPageProps> = ({ setPage }) => {
   document.title = "Sobre"
 
-  const styles = StyleSheet.create({
-    container: {
-      color: "#B2ACA2",
-      textAlign: "start",
-      fontStyle: "normal",
-      fontSize: "18px",
-      fontFamily: '"Chivo Mono", monospace'
-    },
-    background: {
-      width: "100%",
-      background: `linear-gradient(to right, rgba(95, 158, 160, 0.1), rgba(173, 216, 230, 0))`,
-      padding: "10px",
-      marginTop: "50px",
-      display: "flex",
-      justifyContent: "center"
-    },
-    extraMarginTop: {
-      marginTop: "48px"
-    }
-  });
-
   return (
     <>
-      <h1 style={ { textAlign: "center", marginTop: "36px", fontSize: "60px", fontFamily: "Sigmar One" } } >
-        Olá, eu sou o Jefferson
-      </h1 >
+      <div style={ { display: "flex", justifyContent: "center", marginTop: 40 } } >
+        <h1 style={ { fontSize: "60px", fontFamily: "Sigmar One" } } >
+          Olá, eu sou o Jefferson
+        </h1 >
+      </div >
       <div style={ {
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        marginTop: "36px",
       } } >
-        <img src="src/img/me.jpg" alt="me" style={ { borderRadius: "100%", width: "230px" } } />
-        <div className={ css(styles.background) } >
+        <div className={ css(globalStyles.background) } >
+          <img src="src/img/me.jpg" alt="me" style={ { borderRadius: "100%", width: "200px", height: "200px" } } />
+          <div style={ {
+            width: "500px",
+            height: "200px",
+            marginLeft: "80px",
+            display: "flex",
+            flexDirection: "column",
+          } } >
+            <span className={ css(globalStyles.spanStylish) } >
+              Idade: 35 anos
+            </span >
+            <span className={ css(globalStyles.spanStylish) } >
+              Telefone: (85) 98580-0297
+            </span >
+            <span className={ css(globalStyles.spanStylish) } >
+              Email: jeffersontavares1611@gmail.com
+            </span >
+            <span className={ css(globalStyles.spanStylish) } >
+              Localidade: Fortaleza-CE
+            </span >
+          </div >
+          <div style={ { width: 100, display: "flex", flexDirection: "column", alignItems: "start" } } >
+            <ContactsButton
+              name={ "Linkedin" }
+              withName={ false }
+              nameSize={ 20 }
+              size={ 35 }
+              margin={ 18 }
+              link={ "https://linkedin.com/in/jefferson-tavares" }
+            />
+            <ContactsButton
+              name={ "Telegram" }
+              withName={ false }
+              nameSize={ 20 }
+              size={ 35 }
+              margin={ 18 }
+              link={ "https://t.me/jeffersontdm" }
+            />
+            <ContactsButton
+              name={ "Discord" }
+              withName={ false }
+              nameSize={ 20 }
+              size={ 35 }
+              margin={ 18 }
+              link={ "https://discord.com/users/jeffersontdm#1604" }
+            />
+          </div >
+          <div style={ { width: 100, height: 200, display: "flex", flexDirection: "column", alignItems: "start" } } >
+            <ContactsButton
+              name={ "GitHub" }
+              withName={ false }
+              nameSize={ 20 }
+              size={ 35 }
+              margin={ 18 }
+              link={ "https://github.com/jeffersontavaresdm" }
+            />
+            <ContactsButton
+              name={ "Whatsapp" }
+              withName={ false }
+              nameSize={ 20 }
+              size={ 35 }
+              margin={ 18 }
+              link={ "https://wa.me/+5585985800297" }
+            />
+            <ContactsButton
+              name={ "Instagram" }
+              withName={ false }
+              nameSize={ 20 }
+              size={ 35 }
+              margin={ 18 }
+              link={ "https://www.instagram.com/jeffersontdm_" }
+            />
+          </div >
+        </div >
+        <div className={ css(globalStyles.background) } >
           <div style={ {
             width: 1400,
             height: "100%",
+            marginLeft: "300px",
             color: "#B2ACA2",
             fontSize: "24px",
             fontStyle: "italic",
@@ -87,34 +144,33 @@ const AboutPage: React.FunctionComponent<AboutPageProps> = ({ setPage }) => {
             </p >
           </div >
         </div >
-        <footer className={ css(styles.background, styles.extraMarginTop) } >
-          <div className={ css(styles.container) } >
-            Você pode ver um projetinho de
-            &nbsp;<strong >conversão de moedas</strong >, só clicar <Link to={ "/currency-conversion" } >
-            <b >aqui</b >
-          </Link >.
-            <br />
-            Veja também a pagina de
-            &nbsp;<span
-            style={ { cursor: "pointer", textDecoration: "underline", color: "forestgreen" } }
-            onClick={ () => setPage("skills") } >
+        <footer className={ css(globalStyles.background) } >
+          <div style={ { width: "1400px", marginLeft: "300px" } } >
+            <div className={ css(globalStyles.container) } >
+              Você pode ver um projetinho de
+              &nbsp;<strong >conversão de moedas</strong >, só clicar <Link to={ "/currency-conversion" } >
+              <b >aqui</b >
+            </Link >.
+              <br />
+              Veja também a pagina de
+              &nbsp;<span
+              style={ { cursor: "pointer", textDecoration: "underline", color: "forestgreen" } }
+              onClick={ () => setPage("skills") } >
               <b >habilidades</b >
             </span >&nbsp;
-            para ver um pouco sobre minhas <b >hard</b > e <b >soft</b > skills.
-            <br />
-            E por último,
-            &nbsp;<span
-            style={ { cursor: "pointer", textDecoration: "underline", color: "forestgreen" } }
-            onClick={ () => setPage("contacts") } >
+              para ver um pouco sobre minhas <b >hard</b > e <b >soft</b > skills.
+              <br />
+              Por último,&nbsp;
+              <span
+                style={ { cursor: "pointer", textDecoration: "underline", color: "forestgreen" } }
+                onClick={ () => setPage("contacts") } >
               <b >contatos</b >
-            </span >&nbsp;
-            para ver minhas redes.
+            </span >
+              &nbsp;para ver todas as minhas redes.
+            </div >
           </div >
         </footer >
       </div >
-      <footer style={ { position: "fixed", fontSize: "12px", right: "24px", bottom: "24px", } } >
-        <h3 style={ { fontSize: "18px", fontFamily: "Sigmar One" } } >See ya!</h3 >
-      </footer >
     </>
   );
 }

@@ -18,7 +18,6 @@ const contactsButtonStyles = ({ size }: ButtonProps) => {
       transition: "background 0.2s ease-in-out",
       cursor: "pointer",
       ":hover": {
-        // background: "linear-gradient(to top, #ff0000, #ffa500, #ffff00)"
         background: "linear-gradient(to top, coral, blue)"
       },
       ":active": {
