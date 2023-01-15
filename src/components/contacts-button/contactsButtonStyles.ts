@@ -9,7 +9,7 @@ const contactsButtonStyles = ({ size }: ButtonProps) => {
     button: {
       width: size,
       height: size,
-      background: "cadetblue",
+      background: "lightblue",
       border: `1px solid cadetblue`,
       borderRadius: "100px",
       display: "flex",
@@ -18,7 +18,8 @@ const contactsButtonStyles = ({ size }: ButtonProps) => {
       transition: "background 0.2s ease-in-out",
       cursor: "pointer",
       ":hover": {
-        background: "linear-gradient(to right, #ff0000, #ffa500, #ffff00)"
+        // background: "linear-gradient(to top, #ff0000, #ffa500, #ffff00)"
+        background: "linear-gradient(to top, coral, blue)"
       },
       ":active": {
         transform: "translateY(2px)"

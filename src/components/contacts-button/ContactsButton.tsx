@@ -24,7 +24,7 @@ const ContactsButton = ({ name, withName, nameSize, size, margin, link }: Contac
       {
         withName &&
         <span style={ { marginTop: 10, color: "cadetblue", fontSize: nameSize } } >
-          <i ><b >{ name }</b ></i >
+          <b >{ name }</b >
         </span >
       }
     </div >

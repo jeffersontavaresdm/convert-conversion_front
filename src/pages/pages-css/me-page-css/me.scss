@@ -3,7 +3,7 @@
   #header-div {
     height: 70px;
     width: 100%;
-    background-color: cadetblue;
+    background: linear-gradient(to left, #5f9ea0, lightblue);
     display: flex;
     flex-direction: row;
 
@@ -56,6 +56,4 @@
       }
     }
   }
-
-
 }
