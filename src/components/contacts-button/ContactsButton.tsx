@@ -12,10 +12,12 @@ interface ContactsButtonProps {
 }
 
 const ContactsButton = ({ name, withName, nameSize, size, margin, link }: ContactsButtonProps) => {
+  const styles = contactsButtonStyles({ size })
+
   return (
     <div style={ { margin: margin, display: "flex", flexDirection: "column", alignItems: "center" } } >
       <img
-        className={ css(contactsButtonStyles({ size }).button) }
+        className={ css(styles.button) }
         src={ `src/img/svg/${ name.toLowerCase() }-icon.svg` }
         alt={ `${ name }-icon` }
         onClick={ () => window.open(link, '_blank') }

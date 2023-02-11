@@ -1,5 +1,5 @@
 import React from "react";
-import { css, StyleSheet } from 'aphrodite';
+import { css } from 'aphrodite';
 import { Link } from "react-router-dom";
 import ContactsButton from "../../components/contacts-button/ContactsButton";
 import globalStyles from "../../components/contacts-button/globalStyles";
@@ -10,6 +10,8 @@ interface AboutPageProps {
 
 const AboutPage: React.FunctionComponent<AboutPageProps> = ({ setPage }) => {
   document.title = "Sobre"
+
+  const styles = globalStyles()
 
   return (
     <>
@@ -23,7 +25,7 @@ const AboutPage: React.FunctionComponent<AboutPageProps> = ({ setPage }) => {
         flexDirection: "column",
         alignItems: "center",
       } } >
-        <div className={ css(globalStyles.background) } >
+        <div className={ css(styles.background) } >
           <img src="src/img/me.jpg" alt="me" style={ { borderRadius: "100%", width: "200px", height: "200px" } } />
           <div style={ {
             width: "500px",
@@ -32,16 +34,16 @@ const AboutPage: React.FunctionComponent<AboutPageProps> = ({ setPage }) => {
             display: "flex",
             flexDirection: "column",
           } } >
-            <span className={ css(globalStyles.spanStylish) } >
+            <span className={ css(styles.spanStylish) } >
               Idade: 35 anos
             </span >
-            <span className={ css(globalStyles.spanStylish) } >
+            <span className={ css(styles.spanStylish) } >
               Telefone: (85) 98580-0297
             </span >
-            <span className={ css(globalStyles.spanStylish) } >
+            <span className={ css(styles.spanStylish) } >
               Email: jeffersontavares1611@gmail.com
             </span >
-            <span className={ css(globalStyles.spanStylish) } >
+            <span className={ css(styles.spanStylish) } >
               Localidade: Fortaleza-CE
             </span >
           </div >
@@ -98,7 +100,7 @@ const AboutPage: React.FunctionComponent<AboutPageProps> = ({ setPage }) => {
             />
           </div >
         </div >
-        <div className={ css(globalStyles.background) } >
+        <div className={ css(styles.background) } >
           <div style={ {
             width: 1400,
             height: "100%",
@@ -144,9 +146,9 @@ const AboutPage: React.FunctionComponent<AboutPageProps> = ({ setPage }) => {
             </p >
           </div >
         </div >
-        <footer className={ css(globalStyles.background) } >
+        <footer className={ css(styles.background) } >
           <div style={ { width: "1400px", marginLeft: "300px" } } >
-            <div className={ css(globalStyles.container) } >
+            <div className={ css(styles.container) } >
               Você pode ver um projetinho de
               &nbsp;<strong >conversão de moedas</strong >, só clicar <Link to={ "/currency-conversion" } >
               <b >aqui</b >

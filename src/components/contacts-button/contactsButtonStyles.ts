@@ -4,8 +4,12 @@ interface ButtonProps {
   size: number
 }
 
+interface ContactButtonStyle {
+  button: {}
+}
+
 const contactsButtonStyles = ({ size }: ButtonProps) => {
-  return StyleSheet.create({
+  return StyleSheet.create<ContactButtonStyle>({
     button: {
       width: size,
       height: size,

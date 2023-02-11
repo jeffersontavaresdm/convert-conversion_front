@@ -9,6 +9,8 @@ interface SkillPageProps {
 const SkillPage: React.FunctionComponent<SkillPageProps> = ({ setPage }) => {
   document.title = "Habilidades"
 
+  const styles = globalStyles()
+
   return (
     <>
       <h1 style={ {
@@ -20,7 +22,7 @@ const SkillPage: React.FunctionComponent<SkillPageProps> = ({ setPage }) => {
       } } >
         Habilidades
       </h1 >
-      <div className={ css(globalStyles.background) } >
+      <div className={ css(styles.background) } >
         <div style={ {
           display: "flex",
           flexDirection: "row",
@@ -70,9 +72,9 @@ const SkillPage: React.FunctionComponent<SkillPageProps> = ({ setPage }) => {
         color: "white",
         marginTop: "30px"
       } } >
-        <div className={ css(globalStyles.background) } >
+        <div className={ css(styles.background) } >
           <div style={ { width: 1400, display: "flex", justifyContent: "center", marginLeft: 100 } } >
-            <div className={ css(globalStyles.container) } >
+            <div className={ css(styles.container) } >
               <p >
                 Nesta pagina listei algumas de minhas <b >hard</b > e <b >soft</b > skills,
                 porém algumas (principalmente as soft skills) são mais difíceis de mensurar,
