@@ -4,11 +4,13 @@ import { Link } from "react-router-dom";
 import ContactsButton from "../../components/contacts-button/ContactsButton";
 import globalStyles from "../../components/contacts-button/globalStyles";
 
+
 interface AboutPageProps {
-  setPage: (page: string) => void
+  setPage: (page: string) => void,
+  imagesPath: string
 }
 
-const AboutPage: React.FunctionComponent<AboutPageProps> = ({ setPage }) => {
+const AboutPage: React.FunctionComponent<AboutPageProps> = ({ setPage, imagesPath }) => {
   document.title = "Sobre"
 
   const styles = globalStyles()
@@ -26,7 +28,8 @@ const AboutPage: React.FunctionComponent<AboutPageProps> = ({ setPage }) => {
         alignItems: "center",
       } } >
         <div className={ css(styles.background) } >
-          <img src="src/img/me.jpg" alt="me" style={ { borderRadius: "100%", width: "200px", height: "200px" } } />
+          <img src={ `${ imagesPath }/me.jpg` } alt="me"
+               style={ { borderRadius: "100%", width: "200px", height: "200px" } } />
           <div style={ {
             width: "500px",
             height: "200px",
@@ -55,6 +58,7 @@ const AboutPage: React.FunctionComponent<AboutPageProps> = ({ setPage }) => {
               size={ 35 }
               margin={ 18 }
               link={ "https://linkedin.com/in/jefferson-tavares" }
+              imagesPath={ imagesPath }
             />
             <ContactsButton
               name={ "Telegram" }
@@ -63,6 +67,7 @@ const AboutPage: React.FunctionComponent<AboutPageProps> = ({ setPage }) => {
               size={ 35 }
               margin={ 18 }
               link={ "https://t.me/jeffersontdm" }
+              imagesPath={ imagesPath }
             />
             <ContactsButton
               name={ "Discord" }
@@ -71,6 +76,7 @@ const AboutPage: React.FunctionComponent<AboutPageProps> = ({ setPage }) => {
               size={ 35 }
               margin={ 18 }
               link={ "https://discord.com/users/jeffersontdm#1604" }
+              imagesPath={ imagesPath }
             />
           </div >
           <div style={ { width: 100, height: 200, display: "flex", flexDirection: "column", alignItems: "start" } } >
@@ -81,6 +87,7 @@ const AboutPage: React.FunctionComponent<AboutPageProps> = ({ setPage }) => {
               size={ 35 }
               margin={ 18 }
               link={ "https://github.com/jeffersontavaresdm" }
+              imagesPath={ imagesPath }
             />
             <ContactsButton
               name={ "Whatsapp" }
@@ -89,6 +96,7 @@ const AboutPage: React.FunctionComponent<AboutPageProps> = ({ setPage }) => {
               size={ 35 }
               margin={ 18 }
               link={ "https://wa.me/+5585985800297" }
+              imagesPath={ imagesPath }
             />
             <ContactsButton
               name={ "Instagram" }
@@ -97,6 +105,7 @@ const AboutPage: React.FunctionComponent<AboutPageProps> = ({ setPage }) => {
               size={ 35 }
               margin={ 18 }
               link={ "https://www.instagram.com/jeffersontdm_" }
+              imagesPath={ imagesPath }
             />
           </div >
         </div >

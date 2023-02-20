@@ -2,6 +2,10 @@ import React from "react";
 import { css } from "aphrodite";
 import contactsButtonStyles from "./contactsButtonStyles";
 
+const imagesPath = import.meta.env.MODE === 'production'
+  ? import.meta.env.VITE_IMAGES_PATH_PRD
+  : import.meta.env.VITE_IMAGES_PATH_DEV
+
 interface ContactsButtonProps {
   name: string;
   withName: boolean;
@@ -18,7 +22,7 @@ const ContactsButton = ({ name, withName, nameSize, size, margin, link }: Contac
     <div style={ { margin: margin, display: "flex", flexDirection: "column", alignItems: "center" } } >
       <img
         className={ css(styles.button) }
-        src={ `src/img/svg/${ name.toLowerCase() }-icon.svg` }
+        src={ `${ imagesPath }/${ name.toLowerCase() }-icon.svg` }
         alt={ `${ name }-icon` }
         onClick={ () => window.open(link, '_blank') }
         onDragStart={ event => event.preventDefault() }

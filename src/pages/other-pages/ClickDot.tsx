@@ -1,6 +1,10 @@
 import React from "react";
 import Button from "react-bootstrap/Button";
 
+const imagesPath = import.meta.env.MODE === 'production'
+  ? import.meta.env.VITE_IMAGES_PATH_PRD
+  : import.meta.env.VITE_IMAGES_PATH_DEV
+
 interface Dot {
   left: number,
   top: number
@@ -58,7 +62,7 @@ const ClickDot = () => {
     <div style={ { height: "900px", width: "85%" } } >
       <div onClick={ clickHandler } style={ { margin: "4px", display: "inline-block" } } >
         <img
-          src="src/img/map.jpg"
+          src={ `${ imagesPath }/map.jpg` }
           alt="map-img"
           style={ { width: "100%", opacity: "0.8" } }
           onDragStart={ event => event.preventDefault() } />

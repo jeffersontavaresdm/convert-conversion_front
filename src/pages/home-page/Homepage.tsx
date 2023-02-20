@@ -3,6 +3,10 @@ import ContactsPage from "./ContactsPage";
 import SkillPage from "./SkillPage";
 import AboutPage from "./AboutPage";
 
+const imagesPath = import.meta.env.MODE === 'production'
+  ? import.meta.env.VITE_IMAGES_PATH_PRD
+  : import.meta.env.VITE_IMAGES_PATH_DEV
+
 const Homepage = () => {
   const aboutRef = React.useRef<HTMLSpanElement>(null)
   const skillsRef = React.useRef<HTMLSpanElement>(null)
@@ -12,11 +16,11 @@ const Homepage = () => {
   const handlePage = () => {
     switch (page) {
       case "about":
-        return <AboutPage setPage={ setPage } />
+        return <AboutPage setPage={ setPage } imagesPath={ imagesPath } />
       case "skills":
         return <SkillPage setPage={ setPage } />
       case "contacts":
-        return <ContactsPage />
+        return <ContactsPage imagesPath={ imagesPath } />
     }
   }
 
@@ -52,7 +56,7 @@ const Homepage = () => {
     <div id={ "main-div" } >
       <div id={ "header-div" } >
         <div id={ "header-img_name" } onClick={ () => window.location.href = "/" } >
-          <img id={ "icon-img" } src="src/img/svg/radar.svg" alt={ "img01" } />
+          <img id={ "icon-img" } src={ `${ imagesPath }/radar.svg` } alt={ "img01" } />
           <span id={ "header-name" } >Jefferson Tavares</span >
         </div >
         <div id={ "header-features" } >
