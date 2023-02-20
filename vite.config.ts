@@ -5,10 +5,6 @@ import process from 'process';
 
 config();
 
-process.env.NODE_ENV === 'production'
-  ? console.log("produção!")
-  : console.log("desenvolvimento!")
-
 export default defineConfig({
   plugins: [react()],
   server: {

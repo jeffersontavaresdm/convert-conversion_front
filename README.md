@@ -12,9 +12,9 @@ Ele contém uma breve introdução sobre mim, minhas habilidades, projetos e inf
 - [sass](https://sass-lang.com)
 - [axios](https://axios-http.com)
 
-## Instalação
+## Baixar e instalação das dependências
 
-1. Faça o clone deste repositório
+1. Faça o clone deste repositório com o comando `git clone https://github.com/jeffersontavaresdm/jeffersontdm-front.git`
 2. Instale as dependências do projeto utilizando o comando `yarn install`
 
 ## Como Executar
