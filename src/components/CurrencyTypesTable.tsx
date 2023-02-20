@@ -1,37 +1,38 @@
 import Table from "react-bootstrap/Table";
+import { FunctionComponent } from "react";
 
 interface CurrencyTypesTableProps {
   types: string[];
 }
 
-const CurrencyTypesTable = (props: CurrencyTypesTableProps) => {
+const CurrencyTypesTable: FunctionComponent<CurrencyTypesTableProps> = ({ types }) => {
   return (
     <Table
       striped
       bordered
       hover
       variant="dark"
-      style={{border: "2px solid darkcyan", textAlign: "center"}}
+      style={ { border: "2px solid darkcyan", textAlign: "center" } }
     >
-      <thead>
-      <tr>
-        <th>Codigo</th>
-        <th>Nome</th>
-      </tr>
-      </thead>
-      <tbody>
+      <thead >
+      <tr >
+        <th >Codigo</th >
+        <th >Nome</th >
+      </tr >
+      </thead >
+      <tbody >
       {
-        props.types.map(asset => {
+        types.map(asset => {
           return (
-            <tr key={asset}>
-              <td>{asset.split("/")[0]}</td>
-              <td>{asset.split("/")[1]}</td>
-            </tr>
+            <tr key={ asset } >
+              <td >{ asset.split("/")[0] }</td >
+              <td >{ asset.split("/")[1] }</td >
+            </tr >
           )
         })
       }
-      </tbody>
-    </Table>
+      </tbody >
+    </Table >
   );
 }
 

@@ -1,8 +1,7 @@
 import Table from "react-bootstrap/Table";
 import AssetCurrency from "../../dto/AssetCurrency";
-import React, {useState} from "react";
+import React, { useState } from "react";
 import AppSpinner from "../../components/AppSpinner";
-import AllConversionsArcadeButton from "../../components/AllConversionsArcadeButton";
 import ApiService from "../../service/AssetService";
 import AppPagination from "../../components/AppPagination";
 import ResponseResult from "../../dto/ResponseResult";
@@ -12,7 +11,6 @@ const ConversionsPage = () => {
 
   const PAGE_LIMIT = 10;
 
-  const [buttonClicked, setButtonClicked] = useState<boolean>(false)
   const [result, setResult] = useState<ResponseResult>({ assets: [], entityCount: 0 })
   const [page, setPage] = useState<number>(1)
 
@@ -29,22 +27,14 @@ const ConversionsPage = () => {
     return [];
   }
 
-  const filterAssets = (currencies: AssetCurrency[]) => {
-    return assetsHandler(currencies).filter(asset => asset.to.split("/")[0] == "BRL");
-  }
-
   const handlerChangePage = React.useCallback((page: number) => setPage(page), [])
 
   React.useEffect(() => {
     (async () => {
       let result = await ApiService.allConversions(page, PAGE_LIMIT);
-      setResult(
-        buttonClicked
-          ? { assets: filterAssets(result.assets), entityCount: result.entityCount }
-          : { assets: assetsHandler(result.assets), entityCount: result.entityCount }
-      );
+      setResult({ assets: assetsHandler(result.assets), entityCount: result.entityCount });
     })()
-  }, [buttonClicked, page])
+  }, [page])
 
   const formatedDate = (asset: AssetCurrency) => {
     let date = asset
@@ -71,7 +61,7 @@ const ConversionsPage = () => {
   return (
     !result || result.entityCount == 0
       ? <div style={ { position: "absolute", left: "50%", top: "50%", translate: "-50% -50%" } } ><AppSpinner /></div >
-      : <div >
+      : <div style={ { marginTop: "30px" } } >
         <div style={ { display: "flex", flexDirection: "column", textAlign: "center" } } >
           <h1 style={ {
             fontWeight: "bold",
@@ -93,36 +83,16 @@ const ConversionsPage = () => {
           height: "100%",
           marginTop: "50px",
           display: "flex",
-          flexDirection: "row"
+          flexDirection: "row",
+          justifyContent: "center"
         } } >
-          <div style={ {
-            width: "650px",
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            justifyContent: "start",
-            marginLeft: "50px",
-            marginRight: "50px"
-          } } >
-            <span id={ "brl-filter-span" } style={ { color: "white", fontSize: "24px" } } >
-              {
-                !buttonClicked
-                  ? <span >Filtrar por moedas convertidas para <strong >BRL</strong ></span >
-                  : <span ><strong >Todas</strong > as conversões</span >
-              }
-            </span >
-            <div style={ { marginTop: "50px" } } >
-              <AllConversionsArcadeButton buttonClicked={ buttonClicked } setButtonClicked={ setButtonClicked } />
-            </div >
-          </div >
           <div
             style={ {
-              width: "100%",
+              width: "80%",
               display: "flex",
-              justifyContent: "start",
+              justifyContent: "center",
               alignItems: "end",
               flexDirection: "column",
-              marginRight: "2%",
             } } >
             <Table
               striped
@@ -130,11 +100,7 @@ const ConversionsPage = () => {
               hover
               variant={ "dark" }
               size="sm"
-              style={ {
-                border: "2px solid darkcyan",
-                textAlign: "center",
-              } }
-            >
+              style={ { border: "2px solid darkcyan", textAlign: "center" } } >
               <thead >
               <tr >
                 <th style={ { padding: "16px" } } >#</th >

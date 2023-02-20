@@ -4,7 +4,6 @@ import {ConverterPage} from "../pages/currency-converter/ConverterPage";
 import AllConversionsPage from "../pages/currency-converter/ConversionsPage";
 import ClickDot from "../pages/other-pages/ClickDot";
 import Homepage from "../pages/home-page/Homepage";
-import FirstElement from "../pages/other-pages/FirstElement";
 import AppNavbar from "./AppNavbar";
 
 export const AppRounters = () => {
@@ -12,7 +11,6 @@ export const AppRounters = () => {
     <Router >
       <AppNavbar />
       <Routes >
-        <Route path="/f" element={ <FirstElement /> } />
         <Route path="/" element={ <Homepage /> } />
         <Route path="/currency-conversion" element={ <ConverterPage /> } />
         <Route path="/all" element={ <AllConversionsPage /> } />

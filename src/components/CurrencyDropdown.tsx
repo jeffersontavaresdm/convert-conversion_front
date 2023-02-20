@@ -1,18 +1,18 @@
 import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
-import React, {useState} from "react";
+import React, { FunctionComponent, useState } from "react";
 
 interface AssetDropdownProps {
   types: string[]
   setCode: (code: string) => void
 }
 
-function CurrencyDropdown(props: AssetDropdownProps) {
+const CurrencyDropdown: FunctionComponent<AssetDropdownProps> = ({ types, setCode }) => {
   const [title, setTitle] = useState<string>("Codigo")
-  let codes = props.types.map(asset => asset.split("/")[0]);
+  let codes = types.map(asset => asset.split("/")[0]);
 
   const handleSelect = (event: any) => {
-    props.setCode(event)
+    setCode(event)
   }
 
   return (
