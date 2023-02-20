@@ -8,9 +8,9 @@ const imagesPath = import.meta.env.MODE === 'production'
   : import.meta.env.VITE_IMAGES_PATH_DEV
 
 const Homepage = () => {
-  const aboutRef = React.useRef<HTMLSpanElement>(null)
-  const skillsRef = React.useRef<HTMLSpanElement>(null)
-  const contactsRef = React.useRef<HTMLSpanElement>(null)
+  const aboutRef = React.useRef<HTMLSpanElement>(HTMLSpanElement.prototype)
+  const skillsRef = React.useRef<HTMLSpanElement>(HTMLSpanElement.prototype)
+  const contactsRef = React.useRef<HTMLSpanElement>(HTMLSpanElement.prototype)
   const [page, setPage] = React.useState<string>("about")
 
   const handlePage = () => {
@@ -60,15 +60,9 @@ const Homepage = () => {
           <span id={ "header-name" } >Jefferson Tavares</span >
         </div >
         <div id={ "header-features" } >
-          <span ref={ aboutRef } id={ "header-about" } onClick={ () => setPage("about") } >
-          Sobre
-        </span >
-          <span ref={ skillsRef } id={ "header-skills" } onClick={ () => setPage("skills") } >
-          Habilidades
-        </span >
-          <span ref={ contactsRef } id={ "header-contact" } onClick={ () => setPage("contacts") } >
-          Contatos
-        </span >
+          <span ref={ aboutRef } id={ "header-about" } onClick={ () => setPage("about") } >Sobre</span >
+          <span ref={ skillsRef } id={ "header-skills" } onClick={ () => setPage("skills") } >Habilidades</span >
+          <span ref={ contactsRef } id={ "header-contact" } onClick={ () => setPage("contacts") } >Contatos</span >
         </div >
       </div >
       { handlePage() }
