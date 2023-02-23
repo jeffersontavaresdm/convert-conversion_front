@@ -14,16 +14,29 @@ export const ConverterPage = () => {
   document.title = "Converter";
 
   const [types, setTypes] = useState<CurrencyTypes>()
+  const [loading, setLoading] = useState(true);
   const [result, setResult] = useState<AssetCurrency>()
   const [responseError, setResponseError] = useState<boolean>(false)
   const [seeTypes, setSeeTypes] = useState<boolean>(false)
 
-  const distinctTypes = types
-    ? types
-      .currencyTypes
-      .filter((asset, i, arr) => arr.findIndex(t => t.split("/")[0] === asset.split("/")[0]) === i)
-      .sort()
-    : []
+  const fetchData = async () => {
+    try {
+      setTypes(await ApiService.getTypes())
+      setLoading(false)
+    } catch (error) {
+      console.error(error)
+      setLoading(true)
+    }
+  }
+
+  const distinctTypes = () => {
+    return !types
+      ? []
+      : types
+        .currencyTypes
+        .filter((asset, i, arr) => arr.findIndex(t => t.split("/")[0] === asset.split("/")[0]) === i)
+        .sort()
+  }
 
   const resultHandle = (data: AxiosResponse<AssetCurrency, any> | AxiosError) => {
     if (data.status != 200) {
@@ -36,9 +49,18 @@ export const ConverterPage = () => {
   }
 
   React.useEffect(() => {
-    (async () => setTypes(await ApiService.getTypes()))()
-    setInterval(() => (async () => setTypes(await ApiService.getTypes()))(), 60_000)
-  }, [])
+    (async () => fetchData())()
+
+    let intervalId;
+
+    if (loading) {
+      intervalId = setInterval(() => fetchData(), 3000);
+    } else {
+      intervalId = setInterval(() => fetchData(), 60000);
+    }
+
+    return () => clearInterval(intervalId);
+  }, [loading]);
 
   React.useEffect(() => {
     if (seeTypes) {
@@ -78,7 +100,7 @@ export const ConverterPage = () => {
             </strong >
           </p >
           <div style={ { marginTop: "35px", textAlign: "center" } } >
-            <CurrencyOptions resultHandle={ resultHandle } types={ distinctTypes } />
+            <CurrencyOptions resultHandle={ resultHandle } types={ distinctTypes() } />
           </div >
           <div style={ {
             marginTop: "80px",
@@ -127,7 +149,7 @@ export const ConverterPage = () => {
               left: "79%",
               top: "10%"
             } } >
-              <CurrencyTypesTable types={ distinctTypes } />
+              <CurrencyTypesTable types={ distinctTypes() } />
             </div >
             : <></>
         }

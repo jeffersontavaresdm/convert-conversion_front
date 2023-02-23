@@ -13,9 +13,7 @@ class ApiService {
   async convert(from: string, to: string) {
     return await axiosClient
       .get<AssetCurrency>(`/convert?from=${ from }&to=${ to }`)
-      .catch(error => {
-        return error
-      });
+      .catch(error => { return error });
   }
 
   async allConversions(page: number | undefined = 0, limit: number | undefined = 100) {

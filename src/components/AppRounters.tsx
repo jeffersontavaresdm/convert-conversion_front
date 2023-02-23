@@ -1,6 +1,6 @@
 import React from "react";
-import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
-import {ConverterPage} from "../pages/currency-converter/ConverterPage";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { ConverterPage } from "../pages/currency-converter/ConverterPage";
 import AllConversionsPage from "../pages/currency-converter/ConversionsPage";
 import ClickDot from "../pages/other-pages/ClickDot";
 import Homepage from "../pages/home-page/Homepage";
