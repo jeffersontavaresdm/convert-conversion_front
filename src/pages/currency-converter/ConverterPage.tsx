@@ -144,10 +144,10 @@ export const ConverterPage = () => {
         {
           types && seeTypes ?
             <div style={ {
-              width: "350px",
+              width: "300px",
               position: "absolute",
-              left: "79%",
-              top: "10%"
+              left: "83%",
+              top: "13%"
             } } >
               <CurrencyTypesTable types={ distinctTypes() } />
             </div >
