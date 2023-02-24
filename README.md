@@ -8,6 +8,7 @@ Ele contém uma breve introdução sobre mim, minhas habilidades, projetos e inf
 - [Typescript](https://www.typescriptlang.org)
 - [React](https://reactjs.org)
 - [React Router](https://reactrouter.com)
+- [React Bootstrap](https://react-bootstrap.github.io/)
 - [Aphrodite](https://github.com/Khan/aphrodite)
 - [sass](https://sass-lang.com)
 - [axios](https://axios-http.com)
